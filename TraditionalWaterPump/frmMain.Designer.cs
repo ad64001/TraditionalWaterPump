@@ -119,6 +119,12 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             this.MianPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -134,6 +140,12 @@
             // MianPanel
             // 
             this.MianPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.MianPanel.Controls.Add(this.button8);
+            this.MianPanel.Controls.Add(this.button7);
+            this.MianPanel.Controls.Add(this.button6);
+            this.MianPanel.Controls.Add(this.button5);
+            this.MianPanel.Controls.Add(this.label43);
+            this.MianPanel.Controls.Add(this.label44);
             this.MianPanel.Controls.Add(this.label40);
             this.MianPanel.Controls.Add(this.label41);
             this.MianPanel.Controls.Add(this.label42);
@@ -194,9 +206,9 @@
             this.label40.ForeColor = System.Drawing.SystemColors.Control;
             this.label40.Location = new System.Drawing.Point(237, 350);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(52, 22);
+            this.label40.Size = new System.Drawing.Size(65, 22);
             this.label40.TabIndex = 54;
-            this.label40.Text = "0.00";
+            this.label40.Text = "00.00";
             // 
             // label41
             // 
@@ -225,9 +237,9 @@
             this.label37.ForeColor = System.Drawing.SystemColors.Control;
             this.label37.Location = new System.Drawing.Point(237, 253);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(52, 22);
+            this.label37.Size = new System.Drawing.Size(65, 22);
             this.label37.TabIndex = 51;
-            this.label37.Text = "0.00";
+            this.label37.Text = "00.00";
             // 
             // label38
             // 
@@ -256,9 +268,9 @@
             this.label36.ForeColor = System.Drawing.SystemColors.Control;
             this.label36.Location = new System.Drawing.Point(237, 105);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(52, 22);
+            this.label36.Size = new System.Drawing.Size(65, 22);
             this.label36.TabIndex = 48;
-            this.label36.Text = "0.00";
+            this.label36.Text = "00.00";
             // 
             // label35
             // 
@@ -284,7 +296,7 @@
             // 
             this.label33.AutoSize = true;
             this.label33.ForeColor = System.Drawing.SystemColors.Control;
-            this.label33.Location = new System.Drawing.Point(548, 400);
+            this.label33.Location = new System.Drawing.Point(605, 400);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(60, 17);
             this.label33.TabIndex = 45;
@@ -407,7 +419,7 @@
             // xbdMotor1
             // 
             this.xbdMotor1.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.xbdMotor1.Location = new System.Drawing.Point(541, 294);
+            this.xbdMotor1.Location = new System.Drawing.Point(598, 294);
             this.xbdMotor1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.xbdMotor1.Name = "xbdMotor1";
             this.xbdMotor1.PumpState = xbd.ControlLib.PumpState.停止;
@@ -1308,7 +1320,7 @@
             this.xbdFlowControl9.PipeLineWidth = 5;
             this.xbdFlowControl9.PipeTurnLeft = xbd.ControlLib.PipeTurnDirection.None;
             this.xbdFlowControl9.PipeTurnRight = xbd.ControlLib.PipeTurnDirection.None;
-            this.xbdFlowControl9.Size = new System.Drawing.Size(312, 13);
+            this.xbdFlowControl9.Size = new System.Drawing.Size(376, 13);
             this.xbdFlowControl9.TabIndex = 36;
             // 
             // xbdFlowControl10
@@ -1452,6 +1464,83 @@
             this.label1.Text = "AAA上位机批发";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("DigifaceWide", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.ForeColor = System.Drawing.SystemColors.Control;
+            this.label43.Location = new System.Drawing.Point(807, 296);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(65, 22);
+            this.label43.TabIndex = 56;
+            this.label43.Text = "00.00";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.ForeColor = System.Drawing.SystemColors.Control;
+            this.label44.Location = new System.Drawing.Point(808, 270);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(59, 17);
+            this.label44.TabIndex = 55;
+            this.label44.Text = "出水压";
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.button5.BackgroundImage = global::TraditionalWaterPump.Properties.Resources.Border;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.button5.Location = new System.Drawing.Point(800, 0);
+            this.button5.Margin = new System.Windows.Forms.Padding(0);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(117, 47);
+            this.button5.TabIndex = 6;
+            this.button5.Text = "登录";
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.button6.BackgroundImage = global::TraditionalWaterPump.Properties.Resources.Border;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.button6.Location = new System.Drawing.Point(917, -2);
+            this.button6.Margin = new System.Windows.Forms.Padding(0);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(117, 47);
+            this.button6.TabIndex = 57;
+            this.button6.Text = "复位";
+            this.button6.UseVisualStyleBackColor = false;
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.button7.BackgroundImage = global::TraditionalWaterPump.Properties.Resources.Border;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.button7.Location = new System.Drawing.Point(480, 320);
+            this.button7.Margin = new System.Windows.Forms.Padding(0);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(81, 47);
+            this.button7.TabIndex = 58;
+            this.button7.Text = "启动";
+            this.button7.UseVisualStyleBackColor = false;
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.button8.BackgroundImage = global::TraditionalWaterPump.Properties.Resources.Border;
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.button8.Location = new System.Drawing.Point(663, 320);
+            this.button8.Margin = new System.Windows.Forms.Padding(0);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(81, 47);
+            this.button8.TabIndex = 59;
+            this.button8.Text = "启动";
+            this.button8.UseVisualStyleBackColor = false;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
@@ -1577,6 +1666,12 @@
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button6;
     }
 }
 
