@@ -125,6 +125,8 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
             this.MianPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -140,6 +142,8 @@
             // MianPanel
             // 
             this.MianPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.MianPanel.Controls.Add(this.label46);
+            this.MianPanel.Controls.Add(this.label45);
             this.MianPanel.Controls.Add(this.button8);
             this.MianPanel.Controls.Add(this.button7);
             this.MianPanel.Controls.Add(this.button6);
@@ -1541,6 +1545,26 @@
             this.button8.Text = "启动";
             this.button8.UseVisualStyleBackColor = false;
             // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.ForeColor = System.Drawing.SystemColors.Control;
+            this.label45.Location = new System.Drawing.Point(738, 83);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(42, 17);
+            this.label45.TabIndex = 60;
+            this.label45.Text = "液位";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.ForeColor = System.Drawing.SystemColors.Control;
+            this.label46.Location = new System.Drawing.Point(950, 83);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(42, 17);
+            this.label46.TabIndex = 61;
+            this.label46.Text = "液位";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
@@ -1672,6 +1696,8 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label45;
     }
 }
 
