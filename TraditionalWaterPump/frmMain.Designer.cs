@@ -621,11 +621,11 @@
             // 
             this.label27.AutoSize = true;
             this.label27.ForeColor = System.Drawing.SystemColors.Control;
-            this.label27.Location = new System.Drawing.Point(538, 6);
+            this.label27.Location = new System.Drawing.Point(543, 6);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(60, 17);
+            this.label27.Size = new System.Drawing.Size(42, 17);
             this.label27.TabIndex = 17;
-            this.label27.Text = "1#进筏";
+            this.label27.Text = "进筏";
             // 
             // xbdValve1
             // 
