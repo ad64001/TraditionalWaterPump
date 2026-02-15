@@ -60,6 +60,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="S7NetLib.cs" />
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -93,6 +94,14 @@
     <ProjectReference Include="..\xbd.ControlLib\xbd.ControlLib.csproj">
       <Project>{D95ED733-CF03-4636-A414-3882D3FA8CAB}</Project>
       <Name>xbd.ControlLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xbd.DataConvertLib\xbd.DataConvertLib.csproj">
+      <Project>{867237ad-51f4-4ca5-ad32-d68844cc9101}</Project>
+      <Name>xbd.DataConvertLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xbd.s7netplus\xbd.s7netplus.csproj">
+      <Project>{87dca77d-a82c-4ccd-8792-5e6cfb0cc765}</Project>
+      <Name>xbd.s7netplus</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
