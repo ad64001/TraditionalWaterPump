@@ -154,6 +154,7 @@
             this.btn_SysCancel.TabIndex = 26;
             this.btn_SysCancel.Text = "取消设置";
             this.btn_SysCancel.UseVisualStyleBackColor = true;
+            this.btn_SysCancel.Click += new System.EventHandler(this.btn_SysCancel_Click);
             // 
             // btn_SysSet
             // 
@@ -167,6 +168,7 @@
             this.btn_SysSet.TabIndex = 25;
             this.btn_SysSet.Text = "设置完成";
             this.btn_SysSet.UseVisualStyleBackColor = true;
+            this.btn_SysSet.Click += new System.EventHandler(this.btn_SysSet_Click);
             // 
             // label10
             // 
@@ -260,6 +262,7 @@
             this.btn_PlcCancel.TabIndex = 14;
             this.btn_PlcCancel.Text = "取消设置";
             this.btn_PlcCancel.UseVisualStyleBackColor = true;
+            this.btn_PlcCancel.Click += new System.EventHandler(this.btn_PlcCancel_Click);
             // 
             // btn_PlcSet
             // 
@@ -273,6 +276,7 @@
             this.btn_PlcSet.TabIndex = 13;
             this.btn_PlcSet.Text = "设置完成";
             this.btn_PlcSet.UseVisualStyleBackColor = true;
+            this.btn_PlcSet.Click += new System.EventHandler(this.btn_PlcSet_Click);
             // 
             // tx_slot
             // 
@@ -386,6 +390,7 @@
             this.lbl_exit.TabIndex = 3;
             this.lbl_exit.Text = "X";
             this.lbl_exit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_exit.Click += new System.EventHandler(this.lbl_exit_Click);
             // 
             // label2
             // 

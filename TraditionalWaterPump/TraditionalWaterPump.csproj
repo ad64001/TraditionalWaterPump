@@ -47,54 +47,56 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\SysInfo.cs" />
-    <Compile Include="ViewModels\FrmMsgWithAck .cs">
+    <Compile Include="Models\PlcData.cs" />
+    <Compile Include="Services\PlcDataService.cs" />
+    <Compile Include="Pages\FrmMsgWithAck .cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewModels\FrmMsgWithAck .Designer.cs">
+    <Compile Include="Pages\FrmMsgWithAck .Designer.cs">
       <DependentUpon>FrmMsgWithAck .cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\FrmMsgNoAck.cs">
+    <Compile Include="Pages\FrmMsgNoAck.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewModels\FrmMsgNoAck.Designer.cs">
+    <Compile Include="Pages\FrmMsgNoAck.Designer.cs">
       <DependentUpon>FrmMsgNoAck.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\FrmParamSet.cs">
+    <Compile Include="Pages\FrmParamSet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewModels\FrmParamSet.Designer.cs">
+    <Compile Include="Pages\FrmParamSet.Designer.cs">
       <DependentUpon>FrmParamSet.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\SysInfoService.cs" />
+    <Compile Include="Services\SysInfoService.cs" />
     <Compile Include="Tools\IniConfigHelper.cs" />
-    <Compile Include="ViewModels\frmMain.cs">
+    <Compile Include="Pages\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewModels\frmMain.Designer.cs">
+    <Compile Include="Pages\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\MeterShow.cs">
+    <Compile Include="Pages\MeterShow.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ViewModels\MeterShow.Designer.cs">
+    <Compile Include="Pages\MeterShow.Designer.cs">
       <DependentUpon>MeterShow.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Commons\S7NetLib.cs" />
-    <EmbeddedResource Include="ViewModels\frmMain.resx">
+    <EmbeddedResource Include="Pages\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewModels\FrmMsgWithAck .resx">
+    <EmbeddedResource Include="Pages\FrmMsgWithAck .resx">
       <DependentUpon>FrmMsgWithAck .cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewModels\FrmMsgNoAck.resx">
+    <EmbeddedResource Include="Pages\FrmMsgNoAck.resx">
       <DependentUpon>FrmMsgNoAck.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewModels\FrmParamSet.resx">
+    <EmbeddedResource Include="Pages\FrmParamSet.resx">
       <DependentUpon>FrmParamSet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewModels\MeterShow.resx">
+    <EmbeddedResource Include="Pages\MeterShow.resx">
       <DependentUpon>MeterShow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
