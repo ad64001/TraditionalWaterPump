@@ -46,8 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SysInfo.cs" />
-    <Compile Include="SysInfoService.cs" />
+    <Compile Include="Models\SysInfo.cs" />
+    <Compile Include="Views\SysInfoService.cs" />
     <Compile Include="Tools\IniConfigHelper.cs" />
     <Compile Include="ViewModels\frmMain.cs">
       <SubType>Form</SubType>
@@ -107,9 +107,6 @@
       <Name>xbd.s7netplus</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="Views\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
