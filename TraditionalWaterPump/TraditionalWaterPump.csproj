@@ -47,6 +47,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\SysInfo.cs" />
+    <Compile Include="ViewModels\FrmMsgWithAck .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewModels\FrmMsgWithAck .Designer.cs">
+      <DependentUpon>FrmMsgWithAck .cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\FrmMsgNoAck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewModels\FrmMsgNoAck.Designer.cs">
+      <DependentUpon>FrmMsgNoAck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\FrmParamSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewModels\FrmParamSet.Designer.cs">
+      <DependentUpon>FrmParamSet.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\SysInfoService.cs" />
     <Compile Include="Tools\IniConfigHelper.cs" />
     <Compile Include="ViewModels\frmMain.cs">
@@ -66,6 +84,15 @@
     <Compile Include="Commons\S7NetLib.cs" />
     <EmbeddedResource Include="ViewModels\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewModels\FrmMsgWithAck .resx">
+      <DependentUpon>FrmMsgWithAck .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewModels\FrmMsgNoAck.resx">
+      <DependentUpon>FrmMsgNoAck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewModels\FrmParamSet.resx">
+      <DependentUpon>FrmParamSet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewModels\MeterShow.resx">
       <DependentUpon>MeterShow.cs</DependentUpon>

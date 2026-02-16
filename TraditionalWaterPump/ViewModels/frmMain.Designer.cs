@@ -30,6 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.MianPanel = new System.Windows.Forms.Panel();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
@@ -93,12 +101,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.meterShow6 = new TraditionalWaterPump.MeterShow();
-            this.meterShow5 = new TraditionalWaterPump.MeterShow();
-            this.meterShow4 = new TraditionalWaterPump.MeterShow();
-            this.meterShow3 = new TraditionalWaterPump.MeterShow();
-            this.meterShow2 = new TraditionalWaterPump.MeterShow();
-            this.meterShow1 = new TraditionalWaterPump.MeterShow();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -117,16 +119,14 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_ParamSet = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.label45 = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
+            this.meterShow6 = new TraditionalWaterPump.MeterShow();
+            this.meterShow5 = new TraditionalWaterPump.MeterShow();
+            this.meterShow4 = new TraditionalWaterPump.MeterShow();
+            this.meterShow3 = new TraditionalWaterPump.MeterShow();
+            this.meterShow2 = new TraditionalWaterPump.MeterShow();
+            this.meterShow1 = new TraditionalWaterPump.MeterShow();
             this.MianPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -202,6 +202,103 @@
             this.MianPanel.Name = "MianPanel";
             this.MianPanel.Size = new System.Drawing.Size(1280, 643);
             this.MianPanel.TabIndex = 1;
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.ForeColor = System.Drawing.SystemColors.Control;
+            this.label46.Location = new System.Drawing.Point(950, 83);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(42, 17);
+            this.label46.TabIndex = 61;
+            this.label46.Text = "液位";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.ForeColor = System.Drawing.SystemColors.Control;
+            this.label45.Location = new System.Drawing.Point(738, 83);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(42, 17);
+            this.label45.TabIndex = 60;
+            this.label45.Text = "液位";
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.button8.BackgroundImage = global::TraditionalWaterPump.Properties.Resources.Border;
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.button8.Location = new System.Drawing.Point(663, 320);
+            this.button8.Margin = new System.Windows.Forms.Padding(0);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(81, 47);
+            this.button8.TabIndex = 59;
+            this.button8.Text = "启动";
+            this.button8.UseVisualStyleBackColor = false;
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.button7.BackgroundImage = global::TraditionalWaterPump.Properties.Resources.Border;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.button7.Location = new System.Drawing.Point(480, 320);
+            this.button7.Margin = new System.Windows.Forms.Padding(0);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(81, 47);
+            this.button7.TabIndex = 58;
+            this.button7.Text = "启动";
+            this.button7.UseVisualStyleBackColor = false;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.button6.BackgroundImage = global::TraditionalWaterPump.Properties.Resources.Border;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.button6.Location = new System.Drawing.Point(917, -2);
+            this.button6.Margin = new System.Windows.Forms.Padding(0);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(117, 47);
+            this.button6.TabIndex = 57;
+            this.button6.Text = "复位";
+            this.button6.UseVisualStyleBackColor = false;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.button5.BackgroundImage = global::TraditionalWaterPump.Properties.Resources.Border;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.button5.Location = new System.Drawing.Point(800, 0);
+            this.button5.Margin = new System.Windows.Forms.Padding(0);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(117, 47);
+            this.button5.TabIndex = 6;
+            this.button5.Text = "登录";
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("DigifaceWide", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.ForeColor = System.Drawing.SystemColors.Control;
+            this.label43.Location = new System.Drawing.Point(807, 296);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(65, 22);
+            this.label43.TabIndex = 56;
+            this.label43.Text = "00.00";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.ForeColor = System.Drawing.SystemColors.Control;
+            this.label44.Location = new System.Drawing.Point(808, 270);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(59, 17);
+            this.label44.TabIndex = 55;
+            this.label44.Text = "出水压";
             // 
             // label40
             // 
@@ -1066,102 +1163,6 @@
             this.panel3.Size = new System.Drawing.Size(964, 178);
             this.panel3.TabIndex = 5;
             // 
-            // meterShow6
-            // 
-            this.meterShow6.AllowDrop = true;
-            this.meterShow6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.meterShow6.Cursor = System.Windows.Forms.Cursors.Default;
-            this.meterShow6.Font = new System.Drawing.Font("宋体", 10F);
-            this.meterShow6.Location = new System.Drawing.Point(799, 7);
-            this.meterShow6.MeterParamMax = 10F;
-            this.meterShow6.MeterParamMnin = 0F;
-            this.meterShow6.Name = "meterShow6";
-            this.meterShow6.ParamName = "出口水压";
-            this.meterShow6.ParamValue = 0F;
-            this.meterShow6.Size = new System.Drawing.Size(147, 168);
-            this.meterShow6.TabIndex = 5;
-            this.meterShow6.Unit = "bar";
-            // 
-            // meterShow5
-            // 
-            this.meterShow5.AllowDrop = true;
-            this.meterShow5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.meterShow5.Cursor = System.Windows.Forms.Cursors.Default;
-            this.meterShow5.Font = new System.Drawing.Font("宋体", 10F);
-            this.meterShow5.Location = new System.Drawing.Point(643, 10);
-            this.meterShow5.MeterParamMax = 10F;
-            this.meterShow5.MeterParamMnin = 0F;
-            this.meterShow5.Name = "meterShow5";
-            this.meterShow5.ParamName = "2#出水压";
-            this.meterShow5.ParamValue = 0F;
-            this.meterShow5.Size = new System.Drawing.Size(147, 168);
-            this.meterShow5.TabIndex = 4;
-            this.meterShow5.Unit = "bar";
-            // 
-            // meterShow4
-            // 
-            this.meterShow4.AllowDrop = true;
-            this.meterShow4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.meterShow4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.meterShow4.Font = new System.Drawing.Font("宋体", 10F);
-            this.meterShow4.Location = new System.Drawing.Point(487, 10);
-            this.meterShow4.MeterParamMax = 10F;
-            this.meterShow4.MeterParamMnin = 0F;
-            this.meterShow4.Name = "meterShow4";
-            this.meterShow4.ParamName = "1#出水压";
-            this.meterShow4.ParamValue = 0F;
-            this.meterShow4.Size = new System.Drawing.Size(147, 168);
-            this.meterShow4.TabIndex = 3;
-            this.meterShow4.Unit = "bar";
-            // 
-            // meterShow3
-            // 
-            this.meterShow3.AllowDrop = true;
-            this.meterShow3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.meterShow3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.meterShow3.Font = new System.Drawing.Font("宋体", 10F);
-            this.meterShow3.Location = new System.Drawing.Point(331, 7);
-            this.meterShow3.MeterParamMax = 100F;
-            this.meterShow3.MeterParamMnin = 0F;
-            this.meterShow3.Name = "meterShow3";
-            this.meterShow3.ParamName = "出口水温";
-            this.meterShow3.ParamValue = 0F;
-            this.meterShow3.Size = new System.Drawing.Size(147, 168);
-            this.meterShow3.TabIndex = 2;
-            this.meterShow3.Unit = "℃";
-            // 
-            // meterShow2
-            // 
-            this.meterShow2.AllowDrop = true;
-            this.meterShow2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.meterShow2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.meterShow2.Font = new System.Drawing.Font("宋体", 10F);
-            this.meterShow2.Location = new System.Drawing.Point(175, 7);
-            this.meterShow2.MeterParamMax = 100F;
-            this.meterShow2.MeterParamMnin = 0F;
-            this.meterShow2.Name = "meterShow2";
-            this.meterShow2.ParamName = "2#进水温";
-            this.meterShow2.ParamValue = 10F;
-            this.meterShow2.Size = new System.Drawing.Size(147, 168);
-            this.meterShow2.TabIndex = 1;
-            this.meterShow2.Unit = "℃";
-            // 
-            // meterShow1
-            // 
-            this.meterShow1.AllowDrop = true;
-            this.meterShow1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.meterShow1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.meterShow1.Font = new System.Drawing.Font("宋体", 10F);
-            this.meterShow1.Location = new System.Drawing.Point(19, 10);
-            this.meterShow1.MeterParamMax = 100F;
-            this.meterShow1.MeterParamMnin = 0F;
-            this.meterShow1.Name = "meterShow1";
-            this.meterShow1.ParamName = "1#进水温";
-            this.meterShow1.ParamValue = 10F;
-            this.meterShow1.Size = new System.Drawing.Size(147, 168);
-            this.meterShow1.TabIndex = 0;
-            this.meterShow1.Unit = "℃";
-            // 
             // panel2
             // 
             this.panel2.BackgroundImage = global::TraditionalWaterPump.Properties.Resources.PumpPanel;
@@ -1391,7 +1392,7 @@
             this.TopPanel.Controls.Add(this.button3);
             this.TopPanel.Controls.Add(this.button4);
             this.TopPanel.Controls.Add(this.button2);
-            this.TopPanel.Controls.Add(this.button1);
+            this.TopPanel.Controls.Add(this.btn_ParamSet);
             this.TopPanel.Controls.Add(this.label1);
             this.TopPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.TopPanel.Location = new System.Drawing.Point(0, 0);
@@ -1441,19 +1442,20 @@
             this.button2.Text = "历史";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btn_ParamSet
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.button1.BackgroundImage = global::TraditionalWaterPump.Properties.Resources.Border;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.button1.Location = new System.Drawing.Point(9, 9);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 47);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "参数";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_ParamSet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.btn_ParamSet.BackgroundImage = global::TraditionalWaterPump.Properties.Resources.Border;
+            this.btn_ParamSet.FlatAppearance.BorderSize = 0;
+            this.btn_ParamSet.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btn_ParamSet.Location = new System.Drawing.Point(9, 9);
+            this.btn_ParamSet.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_ParamSet.Name = "btn_ParamSet";
+            this.btn_ParamSet.Size = new System.Drawing.Size(117, 47);
+            this.btn_ParamSet.TabIndex = 1;
+            this.btn_ParamSet.Text = "参数";
+            this.btn_ParamSet.UseVisualStyleBackColor = false;
+            this.btn_ParamSet.Click += new System.EventHandler(this.btn_ParamSet_Click);
             // 
             // label1
             // 
@@ -1468,102 +1470,101 @@
             this.label1.Text = "AAA上位机批发";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label43
+            // meterShow6
             // 
-            this.label43.AutoSize = true;
-            this.label43.Font = new System.Drawing.Font("DigifaceWide", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.ForeColor = System.Drawing.SystemColors.Control;
-            this.label43.Location = new System.Drawing.Point(807, 296);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(65, 22);
-            this.label43.TabIndex = 56;
-            this.label43.Text = "00.00";
+            this.meterShow6.AllowDrop = true;
+            this.meterShow6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.meterShow6.Cursor = System.Windows.Forms.Cursors.Default;
+            this.meterShow6.Font = new System.Drawing.Font("宋体", 10F);
+            this.meterShow6.Location = new System.Drawing.Point(799, 7);
+            this.meterShow6.MeterParamMax = 10F;
+            this.meterShow6.MeterParamMnin = 0F;
+            this.meterShow6.Name = "meterShow6";
+            this.meterShow6.ParamName = "出口水压";
+            this.meterShow6.ParamValue = 0F;
+            this.meterShow6.Size = new System.Drawing.Size(147, 168);
+            this.meterShow6.TabIndex = 5;
+            this.meterShow6.Unit = "bar";
             // 
-            // label44
+            // meterShow5
             // 
-            this.label44.AutoSize = true;
-            this.label44.ForeColor = System.Drawing.SystemColors.Control;
-            this.label44.Location = new System.Drawing.Point(808, 270);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(59, 17);
-            this.label44.TabIndex = 55;
-            this.label44.Text = "出水压";
+            this.meterShow5.AllowDrop = true;
+            this.meterShow5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.meterShow5.Cursor = System.Windows.Forms.Cursors.Default;
+            this.meterShow5.Font = new System.Drawing.Font("宋体", 10F);
+            this.meterShow5.Location = new System.Drawing.Point(643, 10);
+            this.meterShow5.MeterParamMax = 10F;
+            this.meterShow5.MeterParamMnin = 0F;
+            this.meterShow5.Name = "meterShow5";
+            this.meterShow5.ParamName = "2#出水压";
+            this.meterShow5.ParamValue = 0F;
+            this.meterShow5.Size = new System.Drawing.Size(147, 168);
+            this.meterShow5.TabIndex = 4;
+            this.meterShow5.Unit = "bar";
             // 
-            // button5
+            // meterShow4
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.button5.BackgroundImage = global::TraditionalWaterPump.Properties.Resources.Border;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.button5.Location = new System.Drawing.Point(800, 0);
-            this.button5.Margin = new System.Windows.Forms.Padding(0);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(117, 47);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "登录";
-            this.button5.UseVisualStyleBackColor = false;
+            this.meterShow4.AllowDrop = true;
+            this.meterShow4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.meterShow4.Cursor = System.Windows.Forms.Cursors.Default;
+            this.meterShow4.Font = new System.Drawing.Font("宋体", 10F);
+            this.meterShow4.Location = new System.Drawing.Point(487, 10);
+            this.meterShow4.MeterParamMax = 10F;
+            this.meterShow4.MeterParamMnin = 0F;
+            this.meterShow4.Name = "meterShow4";
+            this.meterShow4.ParamName = "1#出水压";
+            this.meterShow4.ParamValue = 0F;
+            this.meterShow4.Size = new System.Drawing.Size(147, 168);
+            this.meterShow4.TabIndex = 3;
+            this.meterShow4.Unit = "bar";
             // 
-            // button6
+            // meterShow3
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.button6.BackgroundImage = global::TraditionalWaterPump.Properties.Resources.Border;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.button6.Location = new System.Drawing.Point(917, -2);
-            this.button6.Margin = new System.Windows.Forms.Padding(0);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(117, 47);
-            this.button6.TabIndex = 57;
-            this.button6.Text = "复位";
-            this.button6.UseVisualStyleBackColor = false;
+            this.meterShow3.AllowDrop = true;
+            this.meterShow3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.meterShow3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.meterShow3.Font = new System.Drawing.Font("宋体", 10F);
+            this.meterShow3.Location = new System.Drawing.Point(331, 7);
+            this.meterShow3.MeterParamMax = 100F;
+            this.meterShow3.MeterParamMnin = 0F;
+            this.meterShow3.Name = "meterShow3";
+            this.meterShow3.ParamName = "出口水温";
+            this.meterShow3.ParamValue = 0F;
+            this.meterShow3.Size = new System.Drawing.Size(147, 168);
+            this.meterShow3.TabIndex = 2;
+            this.meterShow3.Unit = "℃";
             // 
-            // button7
+            // meterShow2
             // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.button7.BackgroundImage = global::TraditionalWaterPump.Properties.Resources.Border;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.button7.Location = new System.Drawing.Point(480, 320);
-            this.button7.Margin = new System.Windows.Forms.Padding(0);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(81, 47);
-            this.button7.TabIndex = 58;
-            this.button7.Text = "启动";
-            this.button7.UseVisualStyleBackColor = false;
+            this.meterShow2.AllowDrop = true;
+            this.meterShow2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.meterShow2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.meterShow2.Font = new System.Drawing.Font("宋体", 10F);
+            this.meterShow2.Location = new System.Drawing.Point(175, 7);
+            this.meterShow2.MeterParamMax = 100F;
+            this.meterShow2.MeterParamMnin = 0F;
+            this.meterShow2.Name = "meterShow2";
+            this.meterShow2.ParamName = "2#进水温";
+            this.meterShow2.ParamValue = 10F;
+            this.meterShow2.Size = new System.Drawing.Size(147, 168);
+            this.meterShow2.TabIndex = 1;
+            this.meterShow2.Unit = "℃";
             // 
-            // button8
+            // meterShow1
             // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.button8.BackgroundImage = global::TraditionalWaterPump.Properties.Resources.Border;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.button8.Location = new System.Drawing.Point(663, 320);
-            this.button8.Margin = new System.Windows.Forms.Padding(0);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(81, 47);
-            this.button8.TabIndex = 59;
-            this.button8.Text = "启动";
-            this.button8.UseVisualStyleBackColor = false;
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.ForeColor = System.Drawing.SystemColors.Control;
-            this.label45.Location = new System.Drawing.Point(738, 83);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(42, 17);
-            this.label45.TabIndex = 60;
-            this.label45.Text = "液位";
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.ForeColor = System.Drawing.SystemColors.Control;
-            this.label46.Location = new System.Drawing.Point(950, 83);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(42, 17);
-            this.label46.TabIndex = 61;
-            this.label46.Text = "液位";
+            this.meterShow1.AllowDrop = true;
+            this.meterShow1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.meterShow1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.meterShow1.Font = new System.Drawing.Font("宋体", 10F);
+            this.meterShow1.Location = new System.Drawing.Point(19, 10);
+            this.meterShow1.MeterParamMax = 100F;
+            this.meterShow1.MeterParamMnin = 0F;
+            this.meterShow1.Name = "meterShow1";
+            this.meterShow1.ParamName = "1#进水温";
+            this.meterShow1.ParamValue = 10F;
+            this.meterShow1.Size = new System.Drawing.Size(147, 168);
+            this.meterShow1.TabIndex = 0;
+            this.meterShow1.Unit = "℃";
             // 
             // frmMain
             // 
@@ -1602,7 +1603,7 @@
 
         private System.Windows.Forms.Panel TopPanel;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_ParamSet;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button2;

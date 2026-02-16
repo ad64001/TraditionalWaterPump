@@ -8,84 +8,46 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TraditionalWaterPump.ViewModels;
 using xbd.s7netplus;
 
 namespace TraditionalWaterPump
 {
     public partial class frmMain : Form
     {
-        private S7NetLib slemens = null; 
+        /// <summary>
+        /// 系统配置路径
+        /// </summary>
+        private string sysInfoPath = Application.StartupPath + "\\SysInfo.ini";
+        /// <summary>
+        /// 系统配置服务
+        /// </summary>
+        private SysInfoService infoService = new SysInfoService();
+        /// <summary>
+        /// 系统配置对象
+        /// </summary>
+        private SysInfo sysInfo = new SysInfo();
         public frmMain()
         {
             InitializeComponent();
+            this.Load += frmMain_Load;
+        }
 
-            slemens = new S7NetLib(CpuType.S71500, "192.168.100.150",0,0);
-            var result = slemens.Connect();
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            this.sysInfo = infoService.GetSysInfoFromPath(sysInfoPath);
 
-            if (result.IsSuccess)
+            if (sysInfo == null)
             {
-                //var data = slemens.ReadVariable("DB1.DBD4");
-                //if (data.IsSuccess)
-                //{
-                //    MessageBox.Show(Convert.ToUInt32(data.Content).ConvertToFloat().ToString());
-                //}
-
-                //var data = slemens.ReadByteArray(DataType.DataBlock, 1, 0, 20);
-                //if (data.IsSuccess)
-                //{
-                //    MessageBox.Show(BitConverter.ToString(data.Content));
-                //}
-                //写入测试
-                slemens.WriteVariable("DB1.DBX100.0",true);
-                Thread.Sleep(100);
-                slemens.WriteVariable("DB1.DBX100.1",false);
-
-
-                var data = slemens.ReadClass<PlcData>(1,0);
-                if (data.IsSuccess)
-                {
-                    this.label36.Text = data.Content.TempIn1.ToString("f2");
-                    this.xbdPump1.IsRun = data.Content.InPump1State;
-                }
+                new FrmMsgNoAck("系统配置加载失败", "系统配置").ShowDialog();
+                return;
             }
         }
 
+        private void btn_ParamSet_Click(object sender, EventArgs e)
+        {
+            new FrmParamSet(this.sysInfo,this.infoService,this.sysInfoPath).ShowDialog();
+        }
     }
 
-    public class PlcData
-    {
-        public bool InPump1State { get; set; }
-        public bool InPump2State { get; set; }
-        public bool CirclePump1State { get; set; }
-        public bool CirclePump2State { get; set; }
-        public bool ValveInState { get; set; }
-        public bool ValveOutState { get; set; }
-        public bool SysRunState { get; set; }
-        public bool SysAlarmState { get; set; }
-        public byte[] SpareState { get; set; } = new byte[2];
-        public float PressureIn { get; set; }
-        public float PressureOut { get; set; }
-        public float TempIn1 { get; set; }
-        public float TempIn2 { get; set; }
-        public float TempOut { get; set; }
-        public float PressureTank1 { get; set; }
-        public float PressureTank2 { get; set; }
-        public float LevelTank1 { get; set; }
-        public float LevelTank2 { get; set; }
-        public float PressureTankOut { get; set; }
-        public byte[] SpareVariable { get; set; } = new byte[56];
-        public bool InPump1Start { get; set; }
-        public bool InPump1Stop { get; set; }
-        public bool InPump2Start { get; set; }
-        public bool InPump2Stop { get; set; }
-        public bool CirclePump1Start { get; set; }
-        public bool CirclePump1Stop { get; set; }
-        public bool CirclePump2Start { get; set; }
-        public bool CirclePump2Stop { get; set; }
-        public bool ValveInOpen { get; set; }
-        public bool ValveInClose { get; set; }
-        public bool ValveOutOpen { get; set; }
-        public bool ValveOutClose { get; set; }
-
-    }
 }

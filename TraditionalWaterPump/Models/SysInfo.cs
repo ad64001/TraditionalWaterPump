@@ -11,7 +11,7 @@ namespace TraditionalWaterPump
     {
         public CpuType CpuType { get; set; }
 
-        public string IpAddress { get; set; }
+        public string IpAddress { get; set; } 
 
         /// <summary>
         /// 机架号

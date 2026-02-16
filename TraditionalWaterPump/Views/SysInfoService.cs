@@ -7,7 +7,7 @@ using xbd.s7netplus;
 
 namespace TraditionalWaterPump
 {
-    internal class SysInfoService
+    public class SysInfoService
     {
         /// <summary>
         /// 读配置返回系统信息
