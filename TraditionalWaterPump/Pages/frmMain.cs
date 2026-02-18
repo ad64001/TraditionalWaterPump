@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -37,11 +38,28 @@ namespace TraditionalWaterPump
         /// Plc服务
         /// </summary>
         private PlcDataService plcDataService = new PlcDataService();
+
+        private System.Windows.Forms.Timer updataTimer = new System.Windows.Forms.Timer();
         public frmMain()
         {
             InitializeComponent();
+
+            this.updataTimer.Interval = 500;
+            this.updataTimer.Tick += UpdataTimer_Tick;
+            this.updataTimer.Start();
+
             this.Load += frmMain_Load;
             this.FormClosing += frmMain_FormClosing;
+        }
+
+        private void UpdataTimer_Tick(object sender, EventArgs e)
+        {
+            this.lbl_Time.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + " " + new CultureInfo("zh-CN").DateTimeFormat.GetDayName(DateTime.Now.DayOfWeek);
+
+            if (plcDataService != null)
+            {
+                this.led_PLCState.State = plcDataService.IsConnected;
+            }
         }
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
@@ -145,7 +163,7 @@ namespace TraditionalWaterPump
                 this.ms_PressureTankOut.ParamValue = plcData.PressureTankOut;
 
                 this.led_RunState.State = plcData.SysRunState;
-                this.led_SysAlarmState.State = plcData.SysAlarmState;
+                this.led_SysAlarmState.State = !plcData.SysAlarmState;
 
                 this.lbl_PressureTank1.Text = plcData.PressureTank1.ToString("f2");
                 this.lbl_PressureLevel1.Text = plcData.PressureTank1.ToString("f2");

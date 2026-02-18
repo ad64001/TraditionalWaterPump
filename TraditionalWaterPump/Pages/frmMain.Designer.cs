@@ -101,12 +101,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.ms_PressureTankOut = new TraditionalWaterPump.MeterShow();
-            this.ms_PressureTank2 = new TraditionalWaterPump.MeterShow();
-            this.ms_PressureTank1 = new TraditionalWaterPump.MeterShow();
-            this.ms_TempOut = new TraditionalWaterPump.MeterShow();
-            this.ms_TempIn2 = new TraditionalWaterPump.MeterShow();
-            this.ms_TempIn1 = new TraditionalWaterPump.MeterShow();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbl_PressureOut = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -121,12 +115,18 @@
             this.xbdFlowControl10 = new xbd.ControlLib.xbdFlowControl();
             this.xbdFlowControl11 = new xbd.ControlLib.xbdFlowControl();
             this.TopPanel = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_Time = new System.Windows.Forms.Label();
             this.btn_Exit = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_ParamSet = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.ms_PressureTankOut = new TraditionalWaterPump.MeterShow();
+            this.ms_PressureTank2 = new TraditionalWaterPump.MeterShow();
+            this.ms_PressureTank1 = new TraditionalWaterPump.MeterShow();
+            this.ms_TempOut = new TraditionalWaterPump.MeterShow();
+            this.ms_TempIn2 = new TraditionalWaterPump.MeterShow();
+            this.ms_TempIn1 = new TraditionalWaterPump.MeterShow();
             this.MianPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -1170,102 +1170,6 @@
             this.panel3.Size = new System.Drawing.Size(964, 178);
             this.panel3.TabIndex = 5;
             // 
-            // ms_PressureTankOut
-            // 
-            this.ms_PressureTankOut.AllowDrop = true;
-            this.ms_PressureTankOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.ms_PressureTankOut.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ms_PressureTankOut.Font = new System.Drawing.Font("宋体", 10F);
-            this.ms_PressureTankOut.Location = new System.Drawing.Point(799, 7);
-            this.ms_PressureTankOut.MeterParamMax = 10F;
-            this.ms_PressureTankOut.MeterParamMnin = 0F;
-            this.ms_PressureTankOut.Name = "ms_PressureTankOut";
-            this.ms_PressureTankOut.ParamName = "出口水压";
-            this.ms_PressureTankOut.ParamValue = 0F;
-            this.ms_PressureTankOut.Size = new System.Drawing.Size(147, 168);
-            this.ms_PressureTankOut.TabIndex = 5;
-            this.ms_PressureTankOut.Unit = "bar";
-            // 
-            // ms_PressureTank2
-            // 
-            this.ms_PressureTank2.AllowDrop = true;
-            this.ms_PressureTank2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.ms_PressureTank2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ms_PressureTank2.Font = new System.Drawing.Font("宋体", 10F);
-            this.ms_PressureTank2.Location = new System.Drawing.Point(643, 10);
-            this.ms_PressureTank2.MeterParamMax = 10F;
-            this.ms_PressureTank2.MeterParamMnin = 0F;
-            this.ms_PressureTank2.Name = "ms_PressureTank2";
-            this.ms_PressureTank2.ParamName = "2#出水压";
-            this.ms_PressureTank2.ParamValue = 0F;
-            this.ms_PressureTank2.Size = new System.Drawing.Size(147, 168);
-            this.ms_PressureTank2.TabIndex = 4;
-            this.ms_PressureTank2.Unit = "bar";
-            // 
-            // ms_PressureTank1
-            // 
-            this.ms_PressureTank1.AllowDrop = true;
-            this.ms_PressureTank1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.ms_PressureTank1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ms_PressureTank1.Font = new System.Drawing.Font("宋体", 10F);
-            this.ms_PressureTank1.Location = new System.Drawing.Point(487, 10);
-            this.ms_PressureTank1.MeterParamMax = 10F;
-            this.ms_PressureTank1.MeterParamMnin = 0F;
-            this.ms_PressureTank1.Name = "ms_PressureTank1";
-            this.ms_PressureTank1.ParamName = "1#出水压";
-            this.ms_PressureTank1.ParamValue = 0F;
-            this.ms_PressureTank1.Size = new System.Drawing.Size(147, 168);
-            this.ms_PressureTank1.TabIndex = 3;
-            this.ms_PressureTank1.Unit = "bar";
-            // 
-            // ms_TempOut
-            // 
-            this.ms_TempOut.AllowDrop = true;
-            this.ms_TempOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.ms_TempOut.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ms_TempOut.Font = new System.Drawing.Font("宋体", 10F);
-            this.ms_TempOut.Location = new System.Drawing.Point(331, 7);
-            this.ms_TempOut.MeterParamMax = 100F;
-            this.ms_TempOut.MeterParamMnin = 0F;
-            this.ms_TempOut.Name = "ms_TempOut";
-            this.ms_TempOut.ParamName = "出口水温";
-            this.ms_TempOut.ParamValue = 0F;
-            this.ms_TempOut.Size = new System.Drawing.Size(147, 168);
-            this.ms_TempOut.TabIndex = 2;
-            this.ms_TempOut.Unit = "℃";
-            // 
-            // ms_TempIn2
-            // 
-            this.ms_TempIn2.AllowDrop = true;
-            this.ms_TempIn2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.ms_TempIn2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ms_TempIn2.Font = new System.Drawing.Font("宋体", 10F);
-            this.ms_TempIn2.Location = new System.Drawing.Point(175, 7);
-            this.ms_TempIn2.MeterParamMax = 100F;
-            this.ms_TempIn2.MeterParamMnin = 0F;
-            this.ms_TempIn2.Name = "ms_TempIn2";
-            this.ms_TempIn2.ParamName = "2#进水温";
-            this.ms_TempIn2.ParamValue = 10F;
-            this.ms_TempIn2.Size = new System.Drawing.Size(147, 168);
-            this.ms_TempIn2.TabIndex = 1;
-            this.ms_TempIn2.Unit = "℃";
-            // 
-            // ms_TempIn1
-            // 
-            this.ms_TempIn1.AllowDrop = true;
-            this.ms_TempIn1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.ms_TempIn1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ms_TempIn1.Font = new System.Drawing.Font("宋体", 10F);
-            this.ms_TempIn1.Location = new System.Drawing.Point(19, 10);
-            this.ms_TempIn1.MeterParamMax = 100F;
-            this.ms_TempIn1.MeterParamMnin = 0F;
-            this.ms_TempIn1.Name = "ms_TempIn1";
-            this.ms_TempIn1.ParamName = "1#进水温";
-            this.ms_TempIn1.ParamValue = 10F;
-            this.ms_TempIn1.Size = new System.Drawing.Size(147, 168);
-            this.ms_TempIn1.TabIndex = 0;
-            this.ms_TempIn1.Unit = "℃";
-            // 
             // panel2
             // 
             this.panel2.BackgroundImage = global::TraditionalWaterPump.Properties.Resources.PumpPanel;
@@ -1477,7 +1381,7 @@
             // 
             this.TopPanel.BackColor = System.Drawing.Color.White;
             this.TopPanel.BackgroundImage = global::TraditionalWaterPump.Properties.Resources.TopPanel;
-            this.TopPanel.Controls.Add(this.label2);
+            this.TopPanel.Controls.Add(this.lbl_Time);
             this.TopPanel.Controls.Add(this.btn_Exit);
             this.TopPanel.Controls.Add(this.button4);
             this.TopPanel.Controls.Add(this.button2);
@@ -1489,19 +1393,19 @@
             this.TopPanel.Size = new System.Drawing.Size(1280, 77);
             this.TopPanel.TabIndex = 0;
             // 
-            // label2
+            // lbl_Time
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("宋体", 10F);
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label2.Location = new System.Drawing.Point(1034, 57);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(221, 17);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "20200101 00:00:00 星期五";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_Time.AutoSize = true;
+            this.lbl_Time.BackColor = System.Drawing.Color.White;
+            this.lbl_Time.Font = new System.Drawing.Font("宋体", 10F);
+            this.lbl_Time.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lbl_Time.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbl_Time.Location = new System.Drawing.Point(1034, 57);
+            this.lbl_Time.Name = "lbl_Time";
+            this.lbl_Time.Size = new System.Drawing.Size(221, 17);
+            this.lbl_Time.TabIndex = 5;
+            this.lbl_Time.Text = "20200101 00:00:00 星期五";
+            this.lbl_Time.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btn_Exit
             // 
@@ -1574,6 +1478,102 @@
             this.label1.Text = "AAA上位机批发";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // ms_PressureTankOut
+            // 
+            this.ms_PressureTankOut.AllowDrop = true;
+            this.ms_PressureTankOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.ms_PressureTankOut.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ms_PressureTankOut.Font = new System.Drawing.Font("宋体", 10F);
+            this.ms_PressureTankOut.Location = new System.Drawing.Point(799, 7);
+            this.ms_PressureTankOut.MeterParamMax = 10F;
+            this.ms_PressureTankOut.MeterParamMnin = 0F;
+            this.ms_PressureTankOut.Name = "ms_PressureTankOut";
+            this.ms_PressureTankOut.ParamName = "出口水压";
+            this.ms_PressureTankOut.ParamValue = 0F;
+            this.ms_PressureTankOut.Size = new System.Drawing.Size(147, 168);
+            this.ms_PressureTankOut.TabIndex = 5;
+            this.ms_PressureTankOut.Unit = "bar";
+            // 
+            // ms_PressureTank2
+            // 
+            this.ms_PressureTank2.AllowDrop = true;
+            this.ms_PressureTank2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.ms_PressureTank2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ms_PressureTank2.Font = new System.Drawing.Font("宋体", 10F);
+            this.ms_PressureTank2.Location = new System.Drawing.Point(643, 10);
+            this.ms_PressureTank2.MeterParamMax = 10F;
+            this.ms_PressureTank2.MeterParamMnin = 0F;
+            this.ms_PressureTank2.Name = "ms_PressureTank2";
+            this.ms_PressureTank2.ParamName = "2#出水压";
+            this.ms_PressureTank2.ParamValue = 0F;
+            this.ms_PressureTank2.Size = new System.Drawing.Size(147, 168);
+            this.ms_PressureTank2.TabIndex = 4;
+            this.ms_PressureTank2.Unit = "bar";
+            // 
+            // ms_PressureTank1
+            // 
+            this.ms_PressureTank1.AllowDrop = true;
+            this.ms_PressureTank1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.ms_PressureTank1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ms_PressureTank1.Font = new System.Drawing.Font("宋体", 10F);
+            this.ms_PressureTank1.Location = new System.Drawing.Point(487, 10);
+            this.ms_PressureTank1.MeterParamMax = 10F;
+            this.ms_PressureTank1.MeterParamMnin = 0F;
+            this.ms_PressureTank1.Name = "ms_PressureTank1";
+            this.ms_PressureTank1.ParamName = "1#出水压";
+            this.ms_PressureTank1.ParamValue = 0F;
+            this.ms_PressureTank1.Size = new System.Drawing.Size(147, 168);
+            this.ms_PressureTank1.TabIndex = 3;
+            this.ms_PressureTank1.Unit = "bar";
+            // 
+            // ms_TempOut
+            // 
+            this.ms_TempOut.AllowDrop = true;
+            this.ms_TempOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.ms_TempOut.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ms_TempOut.Font = new System.Drawing.Font("宋体", 10F);
+            this.ms_TempOut.Location = new System.Drawing.Point(331, 7);
+            this.ms_TempOut.MeterParamMax = 100F;
+            this.ms_TempOut.MeterParamMnin = 0F;
+            this.ms_TempOut.Name = "ms_TempOut";
+            this.ms_TempOut.ParamName = "出口水温";
+            this.ms_TempOut.ParamValue = 0F;
+            this.ms_TempOut.Size = new System.Drawing.Size(147, 168);
+            this.ms_TempOut.TabIndex = 2;
+            this.ms_TempOut.Unit = "℃";
+            // 
+            // ms_TempIn2
+            // 
+            this.ms_TempIn2.AllowDrop = true;
+            this.ms_TempIn2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.ms_TempIn2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ms_TempIn2.Font = new System.Drawing.Font("宋体", 10F);
+            this.ms_TempIn2.Location = new System.Drawing.Point(175, 7);
+            this.ms_TempIn2.MeterParamMax = 100F;
+            this.ms_TempIn2.MeterParamMnin = 0F;
+            this.ms_TempIn2.Name = "ms_TempIn2";
+            this.ms_TempIn2.ParamName = "2#进水温";
+            this.ms_TempIn2.ParamValue = 10F;
+            this.ms_TempIn2.Size = new System.Drawing.Size(147, 168);
+            this.ms_TempIn2.TabIndex = 1;
+            this.ms_TempIn2.Unit = "℃";
+            // 
+            // ms_TempIn1
+            // 
+            this.ms_TempIn1.AllowDrop = true;
+            this.ms_TempIn1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.ms_TempIn1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ms_TempIn1.Font = new System.Drawing.Font("宋体", 10F);
+            this.ms_TempIn1.Location = new System.Drawing.Point(19, 10);
+            this.ms_TempIn1.MeterParamMax = 100F;
+            this.ms_TempIn1.MeterParamMnin = 0F;
+            this.ms_TempIn1.Name = "ms_TempIn1";
+            this.ms_TempIn1.ParamName = "1#进水温";
+            this.ms_TempIn1.ParamValue = 10F;
+            this.ms_TempIn1.Size = new System.Drawing.Size(147, 168);
+            this.ms_TempIn1.TabIndex = 0;
+            this.ms_TempIn1.Unit = "℃";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
@@ -1615,7 +1615,7 @@
         private System.Windows.Forms.Button btn_Exit;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_Time;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         private xbd.ControlLib.xbdAnalogMeter meter_PressureIn;
