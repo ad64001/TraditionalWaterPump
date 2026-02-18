@@ -9,6 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TraditionalWaterPump.ViewModels;
+using xbd.ControlLib;
 using xbd.s7netplus;
 
 namespace TraditionalWaterPump
@@ -89,6 +90,7 @@ namespace TraditionalWaterPump
                             plcDataService.IsConnected = false;
                         }
                     }
+                    Thread.Sleep(300);
 
                 }
                 else
@@ -116,12 +118,73 @@ namespace TraditionalWaterPump
         /// <param name="plcData"></param>
         private void UpdataUIData(PlcData plcData)
         {
+            if (this.InvokeRequired)
+            {
+                try
+                {
+                    this.Invoke(new Action<PlcData>(UpdataUIData), plcData);
+                }
+                catch (Exception)
+                {
+                    return;
+                }
+                
+            }
+            else
+            {
+                this.lbl_PressureIn.Text = plcData.PressureIn.ToString("f2") + " bar";
+                this.lbl_PressureOut.Text = plcData.PressureOut.ToString("f2") + " bar";
+                this.meter_PressureIn.Value = plcData.PressureIn;
+                this.meter_PressureOut.Value = plcData.PressureOut;
 
+                this.ms_TempIn1.ParamValue = plcData.TempIn1;
+                this.ms_TempIn2.ParamValue = plcData.TempIn2;
+                this.ms_TempOut.ParamValue = plcData.TempOut;
+                this.ms_PressureTank1.ParamValue = plcData.PressureTank1;
+                this.ms_PressureTank2.ParamValue = plcData.PressureTank2;
+                this.ms_PressureTankOut.ParamValue = plcData.PressureTankOut;
+
+                this.led_RunState.State = plcData.SysRunState;
+                this.led_SysAlarmState.State = plcData.SysAlarmState;
+
+                this.lbl_PressureTank1.Text = plcData.PressureTank1.ToString("f2");
+                this.lbl_PressureLevel1.Text = plcData.PressureTank1.ToString("f2");
+                this.lbl_PressureTank2.Text = plcData.PressureTank2.ToString("f2");
+                this.lbl_PressureLevel2.Text = plcData.PressureTank2.ToString("f2");
+                this.lbl_PressureTankOut.Text = plcData.PressureTankOut.ToString("f2");
+
+                this.lbl_TempIn1.Text = plcData.TempIn1.ToString("f2");
+                this.lbl_TempIn2.Text = plcData.TempIn2.ToString("f2");
+                this.lbl_TempOut.Text = plcData.TempOut.ToString("f2");
+
+                this.pump_In1.IsRun = plcData.InPump1State;
+                this.pump_In2.IsRun = plcData.InPump2State;
+
+                this.valve_In.State = plcData.ValveInState;
+                this.valve_Out.State = plcData.ValveOutState;
+
+                this.motor_Pump1.PumpState = plcData.CirclePump1State ? PumpState.运行 : PumpState.停止;
+                this.motor_Pump2.PumpState = plcData.CirclePump1State ? PumpState.运行 : PumpState.停止;
+
+                this.wave_Tank1.Value = Convert.ToInt32((plcData.LevelTank1 / 2.0f) * 100.0f);
+                this.wave_Tank2.Value = Convert.ToInt32((plcData.LevelTank2 / 2.0f) * 100.0f);
+
+                this.lbl_PreTankOut.Text = plcData.PressureTankOut.ToString("f2");
+
+                this.btn_Pump1.Text = plcData.CirclePump1State ? "停止" : "启动";
+                this.btn_Pump2.Text = plcData.CirclePump2State ? "停止" : "启动";
+            }
+            
         }
 
         private void btn_ParamSet_Click(object sender, EventArgs e)
         {
             new FrmParamSet(this.sysInfo,this.infoService,this.sysInfoPath).ShowDialog();
+        }
+
+        private void btn_Exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 
