@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using xbd.DataConvertLib;
 using xbd.s7netplus;
@@ -97,5 +98,114 @@ namespace TraditionalWaterPump
             }
         }
 
-     }
+        /// <summary>
+        /// 1号泵控制方法
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public bool InPump1Control(bool value)
+        {
+            string startAddress = "DB1.DBX100.0";
+            string stopAddress = "DB1.DBX100.1";
+            string controlAddress = value ? startAddress : stopAddress;
+            bool result = this._s7Net.WriteVariable(controlAddress, true).IsSuccess;
+            Thread.Sleep(50);
+            result &= this._s7Net.WriteVariable(controlAddress, false).IsSuccess;
+            return result;
+        }
+
+        /// <summary>
+        /// 2号泵控制方法
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public bool InPump2Control(bool value)
+        {
+            string startAddress = "DB1.DBX100.2";
+            string stopAddress = "DB1.DBX100.3";
+            string controlAddress = value ? startAddress : stopAddress;
+            bool result = this._s7Net.WriteVariable(controlAddress, true).IsSuccess;
+            Thread.Sleep(50);
+            result &= this._s7Net.WriteVariable(controlAddress, false).IsSuccess;
+            return result;
+        }
+
+        /// <summary>
+        /// 1号循环泵控制方法
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public bool InCirclePump1Control(bool value)
+        {
+            string startAddress = "DB1.DBX100.4";
+            string stopAddress = "DB1.DBX100.5";
+            string controlAddress = value ? startAddress : stopAddress;
+            bool result = _s7Net.WriteVariable(controlAddress, true).IsSuccess;
+            Thread.Sleep(50);
+            result &= _s7Net.WriteVariable(controlAddress, false).IsSuccess;
+            return result;
+        }
+
+        /// <summary>
+        /// 2号循环泵控制方法
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public bool InCirclePump2Control(bool value)
+        {
+            string startAddress = "DB1.DBX100.6";
+            string stopAddress = "DB1.DBX100.7";
+            string controlAddress = value ? startAddress : stopAddress;
+            bool result = _s7Net.WriteVariable(controlAddress, true).IsSuccess;
+            Thread.Sleep(50);
+            result &= _s7Net.WriteVariable(controlAddress, false).IsSuccess;
+            return result;
+        }
+
+        /// <summary>
+        /// 系统复位方法
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public bool SysReset()
+        {
+            string controlAddress = "DB1.DBX101.4";
+            bool result = _s7Net.WriteVariable(controlAddress, true).IsSuccess;
+            Thread.Sleep(50);
+            result &= _s7Net.WriteVariable(controlAddress, false).IsSuccess;
+            return result;
+        }
+
+        /// <summary>
+        /// 进水阀控制方法
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public bool ValveInControl(bool value)
+        {
+            string startAddress = "DB1.DBX101.0";
+            string stopAddress = "DB1.DBX101.1";
+            string controlAddress = value ? startAddress : stopAddress;
+            bool result = _s7Net.WriteVariable(controlAddress, true).IsSuccess;
+            Thread.Sleep(50);
+            result &= _s7Net.WriteVariable(controlAddress, false).IsSuccess;
+            return result;
+        }
+
+        /// <summary>
+        /// 出水阀控制方法
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public bool ValveOutControl(bool value)
+        {
+            string startAddress = "DB1.DBX101.2";
+            string stopAddress = "DB1.DBX101.3";
+            string controlAddress = value ? startAddress : stopAddress;
+            bool result = _s7Net.WriteVariable(controlAddress, true).IsSuccess;
+            Thread.Sleep(50);
+            result &= _s7Net.WriteVariable(controlAddress, false).IsSuccess;
+            return result;
+        }
+    }
 }

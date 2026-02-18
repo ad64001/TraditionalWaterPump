@@ -97,7 +97,7 @@ namespace TraditionalWaterPump
                 {
                     if (plcDataService.IsFristScan)
                     {
-                        Thread.Sleep(6000);
+                        Thread.Sleep(4000);
                         plcDataService.Disconnect();
 
                     }
@@ -163,7 +163,7 @@ namespace TraditionalWaterPump
                 this.valve_In.State = plcData.ValveInState;
                 this.valve_Out.State = plcData.ValveOutState;
 
-                this.motor_Pump1.PumpState = plcData.CirclePump1State ? PumpState.运行 : PumpState.停止;
+                this.motor_Pump1.PumpState = plcData.CirclePump2State ? PumpState.运行 : PumpState.停止;
                 this.motor_Pump2.PumpState = plcData.CirclePump1State ? PumpState.运行 : PumpState.停止;
 
                 this.wave_Tank1.Value = Convert.ToInt32((plcData.LevelTank1 / 2.0f) * 100.0f);
@@ -185,6 +185,50 @@ namespace TraditionalWaterPump
         private void btn_Exit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_Pump1_Click(object sender, EventArgs e)
+        {
+            plcDataService.InCirclePump1Control(this.btn_Pump1.Text == "启动");
+        }
+
+        private void btn_Pump2_Click(object sender, EventArgs e)
+        {
+            plcDataService.InCirclePump2Control(this.btn_Pump2.Text == "启动");
+        }
+
+        private void tg_Pump2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (plcDataService.InPump2Control(this.tg_Pump2.Checked)==false)
+            {
+                this.tg_Pump2.CheckedChanged -= tg_Pump2_CheckedChanged;
+                this.tg_Pump2.Checked = !this.tg_Pump2.Checked;
+                this.tg_Pump2.CheckedChanged += tg_Pump2_CheckedChanged;
+            }
+        }
+
+        private void tg_Pump1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (plcDataService.InPump1Control(this.tg_Pump1.Checked)==false)
+            {
+                this.tg_Pump1.CheckedChanged -= tg_Pump1_CheckedChanged;
+                this.tg_Pump1.Checked = !this.tg_Pump1.Checked;
+                this.tg_Pump1.CheckedChanged += tg_Pump1_CheckedChanged;
+            }
+        }
+
+        private void btn_Reset_Click(object sender, EventArgs e)
+        {
+            plcDataService.SysReset();
+        }
+
+        private void CommonValve_In_DoubleClick(object sender, EventArgs e)
+        {
+            if (sender is xbdValve valve)
+            {
+                FrmValveControl frmValveControl = new FrmValveControl(valve.ValveName,valve.State,this.plcDataService);
+                frmValveControl.ShowDialog();
+            }
         }
     }
 
