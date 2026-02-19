@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TraditionalWaterPump.Services;
 using TraditionalWaterPump.ViewModels;
 using xbd.ControlLib;
 using xbd.s7netplus;
@@ -18,6 +19,7 @@ namespace TraditionalWaterPump
 {
     public partial class frmMain : Form
     {
+        #region 字段
         /// <summary>
         /// 系统配置路径
         /// </summary>
@@ -56,6 +58,11 @@ namespace TraditionalWaterPump
 
         private CameraHelper _cameraHelper;
 
+        private HistoryDataService historyDataService = new HistoryDataService();
+
+        private DateTime lastTime = DateTime.Now;
+
+        #endregion
         public frmMain()
         {
             InitializeComponent();
@@ -147,6 +154,27 @@ namespace TraditionalWaterPump
                     {
                         plcDataService.ErrorTimes = 0;
                         this.UpdataUIData(data.Content);
+
+                        //保存一次历史数据
+                        int timeSpan = DateTime.Now.Minute - lastTime.Minute;
+                        if (timeSpan==1||timeSpan==-59)
+                        {
+                            historyDataService.AddHistoryData(new Models.HistoryData()
+                            {
+                                InsertTime = DateTime.Now,
+                                PressureIn = data.Content.PressureIn.ToString("f2"),
+                                PressureOut = data.Content.PressureOut.ToString("f2"),
+                                TempIn1 = data.Content.TempIn1.ToString("f2"),
+                                TempIn2 = data.Content.TempIn2.ToString("f2"),
+                                TempOut = data.Content.TempOut.ToString("f2"),
+                                PressureTank1 = data.Content.PressureTank1.ToString("f2"),
+                                PressureTank2 = data.Content.PressureTank2.ToString("f2"),
+                                LevelTank1 = data.Content.LevelTank1.ToString("f2"),
+                                LevelTank2 = data.Content.LevelTank2.ToString("f2"),
+                                PressureTankOut = data.Content.PressureTankOut.ToString("f2")
+                            });
+                        }
+                        lastTime = DateTime.Now;
                     }
                     else
                     {
@@ -310,6 +338,20 @@ namespace TraditionalWaterPump
         public static extern bool LockWorkStation();
 
         #endregion
+
+        private void btn_UserLogin_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = new FrmLogin().ShowDialog();
+            if (dialogResult==DialogResult.OK)
+            {
+                this.lbl_User.Text = Program.CurrentUser.LoginName;
+            }
+        }
+
+        private void btn_History_Click(object sender, EventArgs e)
+        {
+            new FrmHistory().ShowDialog();
+        }
     }
 
     #region 消息筛选器 

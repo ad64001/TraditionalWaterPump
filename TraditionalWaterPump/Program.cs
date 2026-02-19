@@ -18,6 +18,10 @@ namespace TraditionalWaterPump
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            string connStr = "Data Source="+Application.StartupPath+ "\\DataBase\\TraditionalWaterPumpDB;Pooling=true;FaillfMissing=false;";
+            new SQLiteService().SetConnectString(connStr);
+
             Application.Run(new frmMain());
         }
 
