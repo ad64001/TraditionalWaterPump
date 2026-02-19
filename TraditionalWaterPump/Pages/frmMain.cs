@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -39,7 +40,20 @@ namespace TraditionalWaterPump
         /// </summary>
         private PlcDataService plcDataService = new PlcDataService();
 
+        /// <summary>
+        /// Timer服务
+        /// </summary>
         private System.Windows.Forms.Timer updataTimer = new System.Windows.Forms.Timer();
+
+        /// <summary>
+        /// 第一次扫描
+        /// </summary>
+        private bool FirstScan = true;
+
+        private MessageFilter _messageFilter;
+
+        private DateTime LoginTime = DateTime.Now;
+
         public frmMain()
         {
             InitializeComponent();
@@ -60,6 +74,28 @@ namespace TraditionalWaterPump
             {
                 this.led_PLCState.State = plcDataService.IsConnected;
             }
+
+            if (sysInfo.ScreenTime>0)
+            {
+                Program.TickCount++;
+                if (sysInfo.ScreenTime*1000/this.updataTimer.Interval == Program.TickCount)
+                {
+                    LockWorkStation();
+                }
+            }
+
+            if (sysInfo.LogoffTime>0)
+            {
+                if (Program.CurrentUser!=null)
+                {
+                    TimeSpan timeSpan = DateTime.Now - LoginTime;
+                    if (timeSpan.TotalSeconds>sysInfo.LogoffTime)
+                    {
+                        Program.CurrentUser = null;
+                        this.btn_UserLogin.Text = "用户登录";
+                    }
+                }
+            }
         }
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
@@ -74,6 +110,12 @@ namespace TraditionalWaterPump
             {
                 new FrmMsgNoAck("系统配置加载失败", "系统配置").ShowDialog();
                 return;
+            }
+
+            if (sysInfo.ScreenTime > 0)
+            {
+                _messageFilter = new MessageFilter();
+                Application.AddMessageFilter(_messageFilter);
             }
 
             cts = new CancellationTokenSource();
@@ -150,6 +192,13 @@ namespace TraditionalWaterPump
             }
             else
             {
+                //第一次扫描
+                if (FirstScan)
+                {
+                    this.tg_Pump1.Checked = plcData.InPump1State;
+                    this.tg_Pump2.Checked = plcData.InPump2State;
+                    FirstScan = false;
+                }
                 this.lbl_PressureIn.Text = plcData.PressureIn.ToString("f2") + " bar";
                 this.lbl_PressureOut.Text = plcData.PressureOut.ToString("f2") + " bar";
                 this.meter_PressureIn.Value = plcData.PressureIn;
@@ -248,6 +297,27 @@ namespace TraditionalWaterPump
                 frmValveControl.ShowDialog();
             }
         }
+
+        #region 系统锁屏
+
+        [DllImport("user32")]
+        public static extern bool LockWorkStation();
+
+        #endregion
     }
 
+    #region 消息筛选器 
+    public class MessageFilter : IMessageFilter
+    {
+        public bool PreFilterMessage(ref Message m)
+        {
+            //如果检测到有鼠标或则键盘的消息，则使计数为0.....
+            if (m.Msg == 0x0200 || m.Msg == 0x0201 || m.Msg == 0x0204 || m.Msg == 0x0207)
+            {
+                Program.TickCount = 0;
+            }
+            return false;
+        }
+    }
+    #endregion
 }

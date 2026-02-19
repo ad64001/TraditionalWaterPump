@@ -21,6 +21,14 @@ namespace TraditionalWaterPump
             Application.Run(new frmMain());
         }
 
+        /// <summary>
+        /// 锁屏时间戳
+        /// </summary>
+        public static int TickCount { get;set; }
 
+        /// <summary>
+        /// 当前登录用户
+        /// </summary>
+        public static SysAdmin CurrentUser;
     }
 }

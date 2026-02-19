@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -37,6 +38,9 @@ namespace TraditionalWaterPump.ViewModels
                 this.xt_logoffTime.Text = this._sysInfo.LogoffTime.ToString();
 
             }
+            this.xt_autoStart.CheckedChanged += this.xt_autoStart_CheckedChanged;
+
+
         }
 
         #region 无边框拖动 
@@ -118,5 +122,36 @@ namespace TraditionalWaterPump.ViewModels
         {
             this.Close();
         }
+
+        private void xt_autoStart_CheckedChanged(object sender, EventArgs e)
+        {
+            AutoStart(this.xt_autoStart.Checked);
+        }
+
+        #region 开机启动
+        /// <summary>  
+        /// 修改程序在注册表中的键值  
+        /// </summary>  
+        /// <param name="isAuto">true:开机启动,false:不开机自启</param> 
+        private void AutoStart(bool isAuto = true)
+        {
+            if (isAuto == true)
+            {
+                RegistryKey R_local = Registry.CurrentUser;
+                RegistryKey R_run = R_local.CreateSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run");
+                R_run.SetValue("TraditionalWaterPump", System.Windows.Forms.Application.ExecutablePath);
+                R_run.Close();
+                R_local.Close();
+            }
+            else
+            {
+                RegistryKey R_local = Registry.CurrentUser;
+                RegistryKey R_run = R_local.CreateSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run");
+                R_run.DeleteValue("TraditionalWaterPump", false);
+                R_run.Close();
+                R_local.Close();
+            }
+        }
+        #endregion
     }
 }

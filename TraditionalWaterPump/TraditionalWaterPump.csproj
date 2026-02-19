@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enum.cs" />
     <Compile Include="Pages\FrmValveControl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +75,7 @@
       <DependentUpon>FrmParamSet.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\SysInfoService.cs" />
+    <Compile Include="SysAdmin.cs" />
     <Compile Include="Tools\IniConfigHelper.cs" />
     <Compile Include="Pages\frmMain.cs">
       <SubType>Form</SubType>
