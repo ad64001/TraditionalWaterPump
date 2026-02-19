@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32;
+﻿using AForge.Video.DirectShow;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,6 +26,12 @@ namespace TraditionalWaterPump.ViewModels
             _sysInfoPath = sysInfoPath;
 
             this.tx_cpu.DataSource = Enum.GetNames(typeof(xbd.s7netplus.CpuType));
+            FilterInfoCollection filterInfoCollection = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+            foreach (FilterInfo item in filterInfoCollection)
+            {
+                this.xt_cameraIndex.Items.Add(item.Name);
+            }
+
 
             if (this._sysInfo!=null)
             {
@@ -37,6 +44,10 @@ namespace TraditionalWaterPump.ViewModels
                 this.xt_screenTime.Text = this._sysInfo.ScreenTime.ToString();
                 this.xt_logoffTime.Text = this._sysInfo.LogoffTime.ToString();
 
+                if (filterInfoCollection.Count > this._sysInfo.CameraIndex)
+                {
+                    this.xt_cameraIndex.SelectedIndex = this._sysInfo.CameraIndex;
+                }
             }
             this.xt_autoStart.CheckedChanged += this.xt_autoStart_CheckedChanged;
 

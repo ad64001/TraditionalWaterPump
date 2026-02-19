@@ -54,6 +54,8 @@ namespace TraditionalWaterPump
 
         private DateTime LoginTime = DateTime.Now;
 
+        private CameraHelper _cameraHelper;
+
         public frmMain()
         {
             InitializeComponent();
@@ -100,7 +102,8 @@ namespace TraditionalWaterPump
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            cts.Cancel();
+            _cameraHelper?.StopCamera();
+            cts?.Cancel();
         }
         private void frmMain_Load(object sender, EventArgs e)
         {
@@ -124,6 +127,9 @@ namespace TraditionalWaterPump
             {
                 PLCCommunication();
             }));
+
+            this._cameraHelper = new CameraHelper(sysInfo.CameraIndex,this.vsp_Panel);
+            this._cameraHelper.StartCamera();
         }
         /// <summary>
         /// 多线程方法
