@@ -32,6 +32,10 @@
             this.MianPanel = new System.Windows.Forms.Panel();
             this.label46 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
+            this.btn_Pump1 = new System.Windows.Forms.Button();
+            this.btn_Pump2 = new System.Windows.Forms.Button();
+            this.btn_Reset = new System.Windows.Forms.Button();
+            this.btn_UserLogin = new System.Windows.Forms.Button();
             this.lbl_PreTankOut = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
             this.lbl_TempOut = new System.Windows.Forms.Label();
@@ -50,7 +54,9 @@
             this.label31 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.pump_In2 = new xbd.ControlLib.xbdPump();
+            this.valve_Out = new xbd.ControlLib.xbdValve();
             this.motor_Pump1 = new xbd.ControlLib.xbdMotor();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.motor_Pump2 = new xbd.ControlLib.xbdMotor();
             this.xbdFlowControl8 = new xbd.ControlLib.xbdFlowControl();
             this.xbdFlowControl7 = new xbd.ControlLib.xbdFlowControl();
@@ -59,26 +65,15 @@
             this.xbdFlowControl4 = new xbd.ControlLib.xbdFlowControl();
             this.label29 = new System.Windows.Forms.Label();
             this.wave_Tank2 = new xbd.ControlLib.xbdWave();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label28 = new System.Windows.Forms.Label();
             this.wave_Tank1 = new xbd.ControlLib.xbdWave();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label27 = new System.Windows.Forms.Label();
+            this.valve_In = new xbd.ControlLib.xbdValve();
             this.label26 = new System.Windows.Forms.Label();
             this.pump_In1 = new xbd.ControlLib.xbdPump();
             this.xbdFlowControl1 = new xbd.ControlLib.xbdFlowControl();
-            this.xbdFlowControl2 = new xbd.ControlLib.xbdFlowControl();
-            this.xbdFlowControl3 = new xbd.ControlLib.xbdFlowControl();
-            this.xbdFlowControl9 = new xbd.ControlLib.xbdFlowControl();
-            this.xbdFlowControl10 = new xbd.ControlLib.xbdFlowControl();
-            this.xbdFlowControl11 = new xbd.ControlLib.xbdFlowControl();
-            this.btn_Pump1 = new System.Windows.Forms.Button();
-            this.btn_Pump2 = new System.Windows.Forms.Button();
-            this.btn_Reset = new System.Windows.Forms.Button();
-            this.btn_UserLogin = new System.Windows.Forms.Button();
-            this.valve_Out = new xbd.ControlLib.xbdValve();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.valve_In = new xbd.ControlLib.xbdValve();
             this.panel6 = new System.Windows.Forms.Panel();
             this.vsp_Panel = new AForge.Controls.VideoSourcePlayer();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -121,12 +116,17 @@
             this.lbl_PressureIn = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.meter_PressureIn = new xbd.ControlLib.xbdAnalogMeter();
+            this.xbdFlowControl2 = new xbd.ControlLib.xbdFlowControl();
+            this.xbdFlowControl3 = new xbd.ControlLib.xbdFlowControl();
+            this.xbdFlowControl9 = new xbd.ControlLib.xbdFlowControl();
+            this.xbdFlowControl10 = new xbd.ControlLib.xbdFlowControl();
+            this.xbdFlowControl11 = new xbd.ControlLib.xbdFlowControl();
             this.TopPanel = new System.Windows.Forms.Panel();
             this.lbl_User = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_Time = new System.Windows.Forms.Label();
             this.btn_Exit = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btn_Report = new System.Windows.Forms.Button();
             this.btn_History = new System.Windows.Forms.Button();
             this.btn_ParamSet = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -226,6 +226,66 @@
             this.label45.Size = new System.Drawing.Size(42, 17);
             this.label45.TabIndex = 60;
             this.label45.Text = "液位";
+            // 
+            // btn_Pump1
+            // 
+            this.btn_Pump1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.btn_Pump1.BackgroundImage = global::TraditionalWaterPump.Properties.Resources.Border;
+            this.btn_Pump1.FlatAppearance.BorderSize = 0;
+            this.btn_Pump1.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btn_Pump1.Location = new System.Drawing.Point(663, 320);
+            this.btn_Pump1.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_Pump1.Name = "btn_Pump1";
+            this.btn_Pump1.Size = new System.Drawing.Size(81, 47);
+            this.btn_Pump1.TabIndex = 59;
+            this.btn_Pump1.Text = "启动";
+            this.btn_Pump1.UseVisualStyleBackColor = false;
+            this.btn_Pump1.Click += new System.EventHandler(this.btn_Pump1_Click);
+            // 
+            // btn_Pump2
+            // 
+            this.btn_Pump2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.btn_Pump2.BackgroundImage = global::TraditionalWaterPump.Properties.Resources.Border;
+            this.btn_Pump2.FlatAppearance.BorderSize = 0;
+            this.btn_Pump2.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btn_Pump2.Location = new System.Drawing.Point(480, 320);
+            this.btn_Pump2.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_Pump2.Name = "btn_Pump2";
+            this.btn_Pump2.Size = new System.Drawing.Size(81, 47);
+            this.btn_Pump2.TabIndex = 58;
+            this.btn_Pump2.Text = "启动";
+            this.btn_Pump2.UseVisualStyleBackColor = false;
+            this.btn_Pump2.Click += new System.EventHandler(this.btn_Pump2_Click);
+            // 
+            // btn_Reset
+            // 
+            this.btn_Reset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.btn_Reset.BackgroundImage = global::TraditionalWaterPump.Properties.Resources.Border;
+            this.btn_Reset.FlatAppearance.BorderSize = 0;
+            this.btn_Reset.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btn_Reset.Location = new System.Drawing.Point(917, -2);
+            this.btn_Reset.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_Reset.Name = "btn_Reset";
+            this.btn_Reset.Size = new System.Drawing.Size(117, 47);
+            this.btn_Reset.TabIndex = 57;
+            this.btn_Reset.Text = "复位";
+            this.btn_Reset.UseVisualStyleBackColor = false;
+            this.btn_Reset.Click += new System.EventHandler(this.btn_Reset_Click);
+            // 
+            // btn_UserLogin
+            // 
+            this.btn_UserLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.btn_UserLogin.BackgroundImage = global::TraditionalWaterPump.Properties.Resources.Border;
+            this.btn_UserLogin.FlatAppearance.BorderSize = 0;
+            this.btn_UserLogin.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btn_UserLogin.Location = new System.Drawing.Point(800, 0);
+            this.btn_UserLogin.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_UserLogin.Name = "btn_UserLogin";
+            this.btn_UserLogin.Size = new System.Drawing.Size(117, 47);
+            this.btn_UserLogin.TabIndex = 6;
+            this.btn_UserLogin.Text = "登录";
+            this.btn_UserLogin.UseVisualStyleBackColor = false;
+            this.btn_UserLogin.Click += new System.EventHandler(this.btn_UserLogin_Click);
             // 
             // lbl_PreTankOut
             // 
@@ -432,6 +492,21 @@
             this.pump_In2.TabIndex = 37;
             this.pump_In2.Text = "xbdPump2";
             // 
+            // valve_Out
+            // 
+            this.valve_Out.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("valve_Out.BackgroundImage")));
+            this.valve_Out.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.valve_Out.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.valve_Out.IsVertical = false;
+            this.valve_Out.Location = new System.Drawing.Point(329, 346);
+            this.valve_Out.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.valve_Out.Name = "valve_Out";
+            this.valve_Out.Size = new System.Drawing.Size(44, 44);
+            this.valve_Out.State = false;
+            this.valve_Out.TabIndex = 35;
+            this.valve_Out.ValveName = "出水阀";
+            this.valve_Out.DoubleClick += new System.EventHandler(this.CommonValve_In_DoubleClick);
+            // 
             // motor_Pump1
             // 
             this.motor_Pump1.Font = new System.Drawing.Font("微软雅黑", 10.5F);
@@ -441,6 +516,17 @@
             this.motor_Pump1.PumpState = xbd.ControlLib.PumpState.停止;
             this.motor_Pump1.Size = new System.Drawing.Size(67, 112);
             this.motor_Pump1.TabIndex = 34;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackgroundImage = global::TraditionalWaterPump.Properties.Resources.Sensor;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox4.Location = new System.Drawing.Point(811, 334);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(43, 59);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 33;
+            this.pictureBox4.TabStop = false;
             // 
             // motor_Pump2
             // 
@@ -587,6 +673,17 @@
             this.wave_Tank2.Value = 0;
             this.wave_Tank2.ValueColor = System.Drawing.Color.Lime;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = global::TraditionalWaterPump.Properties.Resources.Tank;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.Location = new System.Drawing.Point(811, 108);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(136, 96);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 22;
+            this.pictureBox3.TabStop = false;
+            // 
             // label28
             // 
             this.label28.AutoSize = true;
@@ -617,6 +714,17 @@
             this.wave_Tank1.Value = 0;
             this.wave_Tank1.ValueColor = System.Drawing.Color.Lime;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::TraditionalWaterPump.Properties.Resources.Tank;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(599, 108);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(136, 96);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 19;
+            this.pictureBox2.TabStop = false;
+            // 
             // label27
             // 
             this.label27.AutoSize = true;
@@ -626,6 +734,21 @@
             this.label27.Size = new System.Drawing.Size(42, 17);
             this.label27.TabIndex = 17;
             this.label27.Text = "进筏";
+            // 
+            // valve_In
+            // 
+            this.valve_In.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("valve_In.BackgroundImage")));
+            this.valve_In.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.valve_In.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.valve_In.IsVertical = false;
+            this.valve_In.Location = new System.Drawing.Point(541, 33);
+            this.valve_In.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.valve_In.Name = "valve_In";
+            this.valve_In.Size = new System.Drawing.Size(44, 44);
+            this.valve_In.State = false;
+            this.valve_In.TabIndex = 16;
+            this.valve_In.ValveName = "进水阀";
+            this.valve_In.DoubleClick += new System.EventHandler(this.CommonValve_In_DoubleClick);
             // 
             // label26
             // 
@@ -678,234 +801,6 @@
             this.xbdFlowControl1.PipeTurnRight = xbd.ControlLib.PipeTurnDirection.None;
             this.xbdFlowControl1.Size = new System.Drawing.Size(660, 13);
             this.xbdFlowControl1.TabIndex = 13;
-            // 
-            // xbdFlowControl2
-            // 
-            this.xbdFlowControl2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.xbdFlowControl2.ColorPipeLineCenter = System.Drawing.Color.Yellow;
-            this.xbdFlowControl2.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.xbdFlowControl2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.xbdFlowControl2.LineCenterColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.xbdFlowControl2.Location = new System.Drawing.Point(663, 60);
-            this.xbdFlowControl2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.xbdFlowControl2.MoveSpeed = 0.2F;
-            this.xbdFlowControl2.Name = "xbdFlowControl2";
-            this.xbdFlowControl2.PipeLineActive = true;
-            this.xbdFlowControl2.PipeLineGap = 2;
-            this.xbdFlowControl2.PipeLineLength = 2;
-            this.xbdFlowControl2.PipeLineStyle = xbd.ControlLib.DirectionStyle.Vertical;
-            this.xbdFlowControl2.PipeLineWidth = 5;
-            this.xbdFlowControl2.PipeTurnLeft = xbd.ControlLib.PipeTurnDirection.None;
-            this.xbdFlowControl2.PipeTurnRight = xbd.ControlLib.PipeTurnDirection.None;
-            this.xbdFlowControl2.Size = new System.Drawing.Size(10, 54);
-            this.xbdFlowControl2.TabIndex = 25;
-            // 
-            // xbdFlowControl3
-            // 
-            this.xbdFlowControl3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.xbdFlowControl3.ColorPipeLineCenter = System.Drawing.Color.Yellow;
-            this.xbdFlowControl3.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.xbdFlowControl3.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.xbdFlowControl3.LineCenterColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.xbdFlowControl3.Location = new System.Drawing.Point(875, 60);
-            this.xbdFlowControl3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.xbdFlowControl3.MoveSpeed = 0.2F;
-            this.xbdFlowControl3.Name = "xbdFlowControl3";
-            this.xbdFlowControl3.PipeLineActive = true;
-            this.xbdFlowControl3.PipeLineGap = 2;
-            this.xbdFlowControl3.PipeLineLength = 2;
-            this.xbdFlowControl3.PipeLineStyle = xbd.ControlLib.DirectionStyle.Vertical;
-            this.xbdFlowControl3.PipeLineWidth = 5;
-            this.xbdFlowControl3.PipeTurnLeft = xbd.ControlLib.PipeTurnDirection.None;
-            this.xbdFlowControl3.PipeTurnRight = xbd.ControlLib.PipeTurnDirection.None;
-            this.xbdFlowControl3.Size = new System.Drawing.Size(10, 54);
-            this.xbdFlowControl3.TabIndex = 26;
-            // 
-            // xbdFlowControl9
-            // 
-            this.xbdFlowControl9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.xbdFlowControl9.ColorPipeLineCenter = System.Drawing.Color.SeaShell;
-            this.xbdFlowControl9.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.xbdFlowControl9.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.xbdFlowControl9.LineCenterColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.xbdFlowControl9.Location = new System.Drawing.Point(240, 376);
-            this.xbdFlowControl9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.xbdFlowControl9.MoveSpeed = -0.2F;
-            this.xbdFlowControl9.Name = "xbdFlowControl9";
-            this.xbdFlowControl9.PipeLineActive = true;
-            this.xbdFlowControl9.PipeLineGap = 2;
-            this.xbdFlowControl9.PipeLineLength = 2;
-            this.xbdFlowControl9.PipeLineStyle = xbd.ControlLib.DirectionStyle.Horizontal;
-            this.xbdFlowControl9.PipeLineWidth = 5;
-            this.xbdFlowControl9.PipeTurnLeft = xbd.ControlLib.PipeTurnDirection.None;
-            this.xbdFlowControl9.PipeTurnRight = xbd.ControlLib.PipeTurnDirection.None;
-            this.xbdFlowControl9.Size = new System.Drawing.Size(376, 13);
-            this.xbdFlowControl9.TabIndex = 36;
-            // 
-            // xbdFlowControl10
-            // 
-            this.xbdFlowControl10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.xbdFlowControl10.ColorPipeLineCenter = System.Drawing.Color.Yellow;
-            this.xbdFlowControl10.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.xbdFlowControl10.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.xbdFlowControl10.LineCenterColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.xbdFlowControl10.Location = new System.Drawing.Point(226, 205);
-            this.xbdFlowControl10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.xbdFlowControl10.MoveSpeed = 0.2F;
-            this.xbdFlowControl10.Name = "xbdFlowControl10";
-            this.xbdFlowControl10.PipeLineActive = true;
-            this.xbdFlowControl10.PipeLineGap = 2;
-            this.xbdFlowControl10.PipeLineLength = 2;
-            this.xbdFlowControl10.PipeLineStyle = xbd.ControlLib.DirectionStyle.Horizontal;
-            this.xbdFlowControl10.PipeLineWidth = 5;
-            this.xbdFlowControl10.PipeTurnLeft = xbd.ControlLib.PipeTurnDirection.None;
-            this.xbdFlowControl10.PipeTurnRight = xbd.ControlLib.PipeTurnDirection.None;
-            this.xbdFlowControl10.Size = new System.Drawing.Size(264, 13);
-            this.xbdFlowControl10.TabIndex = 39;
-            // 
-            // xbdFlowControl11
-            // 
-            this.xbdFlowControl11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.xbdFlowControl11.ColorPipeLineCenter = System.Drawing.Color.Yellow;
-            this.xbdFlowControl11.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.xbdFlowControl11.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.xbdFlowControl11.LineCenterColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.xbdFlowControl11.Location = new System.Drawing.Point(480, 60);
-            this.xbdFlowControl11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.xbdFlowControl11.MoveSpeed = -0.2F;
-            this.xbdFlowControl11.Name = "xbdFlowControl11";
-            this.xbdFlowControl11.PipeLineActive = true;
-            this.xbdFlowControl11.PipeLineGap = 2;
-            this.xbdFlowControl11.PipeLineLength = 2;
-            this.xbdFlowControl11.PipeLineStyle = xbd.ControlLib.DirectionStyle.Vertical;
-            this.xbdFlowControl11.PipeLineWidth = 5;
-            this.xbdFlowControl11.PipeTurnLeft = xbd.ControlLib.PipeTurnDirection.None;
-            this.xbdFlowControl11.PipeTurnRight = xbd.ControlLib.PipeTurnDirection.None;
-            this.xbdFlowControl11.Size = new System.Drawing.Size(18, 158);
-            this.xbdFlowControl11.TabIndex = 40;
-            // 
-            // btn_Pump1
-            // 
-            this.btn_Pump1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.btn_Pump1.BackgroundImage = global::TraditionalWaterPump.Properties.Resources.Border;
-            this.btn_Pump1.FlatAppearance.BorderSize = 0;
-            this.btn_Pump1.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_Pump1.Location = new System.Drawing.Point(663, 320);
-            this.btn_Pump1.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_Pump1.Name = "btn_Pump1";
-            this.btn_Pump1.Size = new System.Drawing.Size(81, 47);
-            this.btn_Pump1.TabIndex = 59;
-            this.btn_Pump1.Text = "启动";
-            this.btn_Pump1.UseVisualStyleBackColor = false;
-            this.btn_Pump1.Click += new System.EventHandler(this.btn_Pump1_Click);
-            // 
-            // btn_Pump2
-            // 
-            this.btn_Pump2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.btn_Pump2.BackgroundImage = global::TraditionalWaterPump.Properties.Resources.Border;
-            this.btn_Pump2.FlatAppearance.BorderSize = 0;
-            this.btn_Pump2.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_Pump2.Location = new System.Drawing.Point(480, 320);
-            this.btn_Pump2.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_Pump2.Name = "btn_Pump2";
-            this.btn_Pump2.Size = new System.Drawing.Size(81, 47);
-            this.btn_Pump2.TabIndex = 58;
-            this.btn_Pump2.Text = "启动";
-            this.btn_Pump2.UseVisualStyleBackColor = false;
-            this.btn_Pump2.Click += new System.EventHandler(this.btn_Pump2_Click);
-            // 
-            // btn_Reset
-            // 
-            this.btn_Reset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.btn_Reset.BackgroundImage = global::TraditionalWaterPump.Properties.Resources.Border;
-            this.btn_Reset.FlatAppearance.BorderSize = 0;
-            this.btn_Reset.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_Reset.Location = new System.Drawing.Point(917, -2);
-            this.btn_Reset.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_Reset.Name = "btn_Reset";
-            this.btn_Reset.Size = new System.Drawing.Size(117, 47);
-            this.btn_Reset.TabIndex = 57;
-            this.btn_Reset.Text = "复位";
-            this.btn_Reset.UseVisualStyleBackColor = false;
-            this.btn_Reset.Click += new System.EventHandler(this.btn_Reset_Click);
-            // 
-            // btn_UserLogin
-            // 
-            this.btn_UserLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.btn_UserLogin.BackgroundImage = global::TraditionalWaterPump.Properties.Resources.Border;
-            this.btn_UserLogin.FlatAppearance.BorderSize = 0;
-            this.btn_UserLogin.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_UserLogin.Location = new System.Drawing.Point(800, 0);
-            this.btn_UserLogin.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_UserLogin.Name = "btn_UserLogin";
-            this.btn_UserLogin.Size = new System.Drawing.Size(117, 47);
-            this.btn_UserLogin.TabIndex = 6;
-            this.btn_UserLogin.Text = "登录";
-            this.btn_UserLogin.UseVisualStyleBackColor = false;
-            this.btn_UserLogin.Click += new System.EventHandler(this.btn_UserLogin_Click);
-            // 
-            // valve_Out
-            // 
-            this.valve_Out.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("valve_Out.BackgroundImage")));
-            this.valve_Out.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.valve_Out.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.valve_Out.IsVertical = false;
-            this.valve_Out.Location = new System.Drawing.Point(329, 346);
-            this.valve_Out.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.valve_Out.Name = "valve_Out";
-            this.valve_Out.Size = new System.Drawing.Size(44, 44);
-            this.valve_Out.State = false;
-            this.valve_Out.TabIndex = 35;
-            this.valve_Out.ValveName = "出水阀";
-            this.valve_Out.DoubleClick += new System.EventHandler(this.CommonValve_In_DoubleClick);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackgroundImage = global::TraditionalWaterPump.Properties.Resources.Sensor;
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox4.Location = new System.Drawing.Point(811, 334);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(43, 59);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 33;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImage = global::TraditionalWaterPump.Properties.Resources.Tank;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(811, 108);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(136, 96);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 22;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::TraditionalWaterPump.Properties.Resources.Tank;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(599, 108);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(136, 96);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 19;
-            this.pictureBox2.TabStop = false;
-            // 
-            // valve_In
-            // 
-            this.valve_In.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("valve_In.BackgroundImage")));
-            this.valve_In.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.valve_In.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.valve_In.IsVertical = false;
-            this.valve_In.Location = new System.Drawing.Point(541, 33);
-            this.valve_In.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.valve_In.Name = "valve_In";
-            this.valve_In.Size = new System.Drawing.Size(44, 44);
-            this.valve_In.State = false;
-            this.valve_In.TabIndex = 16;
-            this.valve_In.ValveName = "进水阀";
-            this.valve_In.DoubleClick += new System.EventHandler(this.CommonValve_In_DoubleClick);
             // 
             // panel6
             // 
@@ -1488,6 +1383,111 @@
             this.meter_PressureIn.Value = 0D;
             this.meter_PressureIn.ViewGlass = false;
             // 
+            // xbdFlowControl2
+            // 
+            this.xbdFlowControl2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.xbdFlowControl2.ColorPipeLineCenter = System.Drawing.Color.Yellow;
+            this.xbdFlowControl2.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.xbdFlowControl2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.xbdFlowControl2.LineCenterColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.xbdFlowControl2.Location = new System.Drawing.Point(663, 60);
+            this.xbdFlowControl2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.xbdFlowControl2.MoveSpeed = 0.2F;
+            this.xbdFlowControl2.Name = "xbdFlowControl2";
+            this.xbdFlowControl2.PipeLineActive = true;
+            this.xbdFlowControl2.PipeLineGap = 2;
+            this.xbdFlowControl2.PipeLineLength = 2;
+            this.xbdFlowControl2.PipeLineStyle = xbd.ControlLib.DirectionStyle.Vertical;
+            this.xbdFlowControl2.PipeLineWidth = 5;
+            this.xbdFlowControl2.PipeTurnLeft = xbd.ControlLib.PipeTurnDirection.None;
+            this.xbdFlowControl2.PipeTurnRight = xbd.ControlLib.PipeTurnDirection.None;
+            this.xbdFlowControl2.Size = new System.Drawing.Size(10, 54);
+            this.xbdFlowControl2.TabIndex = 25;
+            // 
+            // xbdFlowControl3
+            // 
+            this.xbdFlowControl3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.xbdFlowControl3.ColorPipeLineCenter = System.Drawing.Color.Yellow;
+            this.xbdFlowControl3.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.xbdFlowControl3.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.xbdFlowControl3.LineCenterColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.xbdFlowControl3.Location = new System.Drawing.Point(875, 60);
+            this.xbdFlowControl3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.xbdFlowControl3.MoveSpeed = 0.2F;
+            this.xbdFlowControl3.Name = "xbdFlowControl3";
+            this.xbdFlowControl3.PipeLineActive = true;
+            this.xbdFlowControl3.PipeLineGap = 2;
+            this.xbdFlowControl3.PipeLineLength = 2;
+            this.xbdFlowControl3.PipeLineStyle = xbd.ControlLib.DirectionStyle.Vertical;
+            this.xbdFlowControl3.PipeLineWidth = 5;
+            this.xbdFlowControl3.PipeTurnLeft = xbd.ControlLib.PipeTurnDirection.None;
+            this.xbdFlowControl3.PipeTurnRight = xbd.ControlLib.PipeTurnDirection.None;
+            this.xbdFlowControl3.Size = new System.Drawing.Size(10, 54);
+            this.xbdFlowControl3.TabIndex = 26;
+            // 
+            // xbdFlowControl9
+            // 
+            this.xbdFlowControl9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.xbdFlowControl9.ColorPipeLineCenter = System.Drawing.Color.SeaShell;
+            this.xbdFlowControl9.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.xbdFlowControl9.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.xbdFlowControl9.LineCenterColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.xbdFlowControl9.Location = new System.Drawing.Point(240, 376);
+            this.xbdFlowControl9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.xbdFlowControl9.MoveSpeed = -0.2F;
+            this.xbdFlowControl9.Name = "xbdFlowControl9";
+            this.xbdFlowControl9.PipeLineActive = true;
+            this.xbdFlowControl9.PipeLineGap = 2;
+            this.xbdFlowControl9.PipeLineLength = 2;
+            this.xbdFlowControl9.PipeLineStyle = xbd.ControlLib.DirectionStyle.Horizontal;
+            this.xbdFlowControl9.PipeLineWidth = 5;
+            this.xbdFlowControl9.PipeTurnLeft = xbd.ControlLib.PipeTurnDirection.None;
+            this.xbdFlowControl9.PipeTurnRight = xbd.ControlLib.PipeTurnDirection.None;
+            this.xbdFlowControl9.Size = new System.Drawing.Size(376, 13);
+            this.xbdFlowControl9.TabIndex = 36;
+            // 
+            // xbdFlowControl10
+            // 
+            this.xbdFlowControl10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.xbdFlowControl10.ColorPipeLineCenter = System.Drawing.Color.Yellow;
+            this.xbdFlowControl10.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.xbdFlowControl10.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.xbdFlowControl10.LineCenterColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.xbdFlowControl10.Location = new System.Drawing.Point(226, 205);
+            this.xbdFlowControl10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.xbdFlowControl10.MoveSpeed = 0.2F;
+            this.xbdFlowControl10.Name = "xbdFlowControl10";
+            this.xbdFlowControl10.PipeLineActive = true;
+            this.xbdFlowControl10.PipeLineGap = 2;
+            this.xbdFlowControl10.PipeLineLength = 2;
+            this.xbdFlowControl10.PipeLineStyle = xbd.ControlLib.DirectionStyle.Horizontal;
+            this.xbdFlowControl10.PipeLineWidth = 5;
+            this.xbdFlowControl10.PipeTurnLeft = xbd.ControlLib.PipeTurnDirection.None;
+            this.xbdFlowControl10.PipeTurnRight = xbd.ControlLib.PipeTurnDirection.None;
+            this.xbdFlowControl10.Size = new System.Drawing.Size(264, 13);
+            this.xbdFlowControl10.TabIndex = 39;
+            // 
+            // xbdFlowControl11
+            // 
+            this.xbdFlowControl11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.xbdFlowControl11.ColorPipeLineCenter = System.Drawing.Color.Yellow;
+            this.xbdFlowControl11.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.xbdFlowControl11.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.xbdFlowControl11.LineCenterColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.xbdFlowControl11.Location = new System.Drawing.Point(480, 60);
+            this.xbdFlowControl11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.xbdFlowControl11.MoveSpeed = -0.2F;
+            this.xbdFlowControl11.Name = "xbdFlowControl11";
+            this.xbdFlowControl11.PipeLineActive = true;
+            this.xbdFlowControl11.PipeLineGap = 2;
+            this.xbdFlowControl11.PipeLineLength = 2;
+            this.xbdFlowControl11.PipeLineStyle = xbd.ControlLib.DirectionStyle.Vertical;
+            this.xbdFlowControl11.PipeLineWidth = 5;
+            this.xbdFlowControl11.PipeTurnLeft = xbd.ControlLib.PipeTurnDirection.None;
+            this.xbdFlowControl11.PipeTurnRight = xbd.ControlLib.PipeTurnDirection.None;
+            this.xbdFlowControl11.Size = new System.Drawing.Size(18, 158);
+            this.xbdFlowControl11.TabIndex = 40;
+            // 
             // TopPanel
             // 
             this.TopPanel.BackColor = System.Drawing.Color.White;
@@ -1496,7 +1496,7 @@
             this.TopPanel.Controls.Add(this.label2);
             this.TopPanel.Controls.Add(this.lbl_Time);
             this.TopPanel.Controls.Add(this.btn_Exit);
-            this.TopPanel.Controls.Add(this.button4);
+            this.TopPanel.Controls.Add(this.btn_Report);
             this.TopPanel.Controls.Add(this.btn_History);
             this.TopPanel.Controls.Add(this.btn_ParamSet);
             this.TopPanel.Controls.Add(this.label1);
@@ -1563,19 +1563,20 @@
             this.btn_Exit.UseVisualStyleBackColor = false;
             this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
-            // button4
+            // btn_Report
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.button4.BackgroundImage = global::TraditionalWaterPump.Properties.Resources.Border;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.button4.Location = new System.Drawing.Point(1024, 6);
-            this.button4.Margin = new System.Windows.Forms.Padding(0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(117, 47);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "数据";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btn_Report.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.btn_Report.BackgroundImage = global::TraditionalWaterPump.Properties.Resources.Border;
+            this.btn_Report.FlatAppearance.BorderSize = 0;
+            this.btn_Report.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btn_Report.Location = new System.Drawing.Point(1024, 6);
+            this.btn_Report.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_Report.Name = "btn_Report";
+            this.btn_Report.Size = new System.Drawing.Size(117, 47);
+            this.btn_Report.TabIndex = 3;
+            this.btn_Report.Text = "数据";
+            this.btn_Report.UseVisualStyleBackColor = false;
+            this.btn_Report.Click += new System.EventHandler(this.btn_Report_Click);
             // 
             // btn_History
             // 
@@ -1660,7 +1661,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_ParamSet;
         private System.Windows.Forms.Button btn_Exit;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btn_Report;
         private System.Windows.Forms.Button btn_History;
         private System.Windows.Forms.Label lbl_Time;
         private System.Windows.Forms.Panel panel1;

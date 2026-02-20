@@ -48,5 +48,30 @@ namespace TraditionalWaterPump.ViewModels
             }
         }
         #endregion
+
+        private void lbl_Message_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmMsgNoAck_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_Title_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TopPlanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

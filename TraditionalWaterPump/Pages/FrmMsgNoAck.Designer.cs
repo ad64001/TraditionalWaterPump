@@ -66,6 +66,7 @@
             this.lbl_Message.TabIndex = 33;
             this.lbl_Message.Text = "默认";
             this.lbl_Message.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_Message.Click += new System.EventHandler(this.lbl_Message_Click);
             // 
             // panel1
             // 
@@ -89,6 +90,7 @@
             this.TopPlanel.Name = "TopPlanel";
             this.TopPlanel.Size = new System.Drawing.Size(331, 58);
             this.TopPlanel.TabIndex = 2;
+            this.TopPlanel.Paint += new System.Windows.Forms.PaintEventHandler(this.TopPlanel_Paint);
             this.TopPlanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel_MouseDown);
             this.TopPlanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Panel_MouseMove);
             // 
@@ -115,6 +117,7 @@
             this.lbl_Title.Size = new System.Drawing.Size(112, 25);
             this.lbl_Title.TabIndex = 2;
             this.lbl_Title.Text = "消息提示";
+            this.lbl_Title.Click += new System.EventHandler(this.lbl_Title_Click);
             // 
             // pictureBox1
             // 
@@ -126,6 +129,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label1
             // 
@@ -149,6 +153,7 @@
             this.Name = "FrmMsgNoAck";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMsgNoAck";
+            this.Load += new System.EventHandler(this.FrmMsgNoAck_Load);
             this.panel1.ResumeLayout(false);
             this.TopPlanel.ResumeLayout(false);
             this.TopPlanel.PerformLayout();

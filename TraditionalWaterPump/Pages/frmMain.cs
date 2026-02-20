@@ -341,16 +341,32 @@ namespace TraditionalWaterPump
 
         private void btn_UserLogin_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = new FrmLogin().ShowDialog();
-            if (dialogResult==DialogResult.OK)
+            if (this.btn_UserLogin.Text == "登录")
             {
-                this.lbl_User.Text = Program.CurrentUser.LoginName;
+                DialogResult dialogResult = new FrmLogin().ShowDialog();
+                if (dialogResult == DialogResult.OK)
+                {
+                    this.lbl_User.Text = Program.CurrentUser.LoginName;
+                    LoginTime = DateTime.Now;
+                    this.btn_UserLogin.Text = "用户管理";
+                }
             }
+            else
+            {
+                FrmUserManager frmUserManager = new FrmUserManager();
+                frmUserManager.ShowDialog();
+            }
+
         }
 
         private void btn_History_Click(object sender, EventArgs e)
         {
             new FrmHistory().ShowDialog();
+        }
+
+        private void btn_Report_Click(object sender, EventArgs e)
+        {
+            new FrmReport().ShowDialog();
         }
     }
 

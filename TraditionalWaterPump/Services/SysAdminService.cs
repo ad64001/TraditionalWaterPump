@@ -60,5 +60,49 @@ namespace TraditionalWaterPump
             dataReader.Close();
             return sysAdmin;
         }
+
+        /// <summary>
+        /// 添加用户
+        /// </summary>
+        /// <param name="sysAdmin"></param>
+        /// <returns></returns>
+        public bool AddSysAdmin(SysAdmin sysAdmin)
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append("insert into SysAdmin(LoginName, LoginPwd, RoleName)");
+            stringBuilder.Append(" values(@LoginName, @LoginPwd, @RoleName)");
+            SQLiteParameter[] parameters = new SQLiteParameter[]
+            {
+                new SQLiteParameter("@LoginName", sysAdmin.LoginName),
+                new SQLiteParameter("@LoginPwd", sysAdmin.LoginPwd),
+                new SQLiteParameter("@RoleName", sysAdmin.RoleName.ToString())
+            };
+            return SQLiteHelper.ExecuteNonQuery(stringBuilder.ToString(), parameters) == 1;
+        }
+
+        public bool UpdateSysAdmin(SysAdmin sysAdmin)
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append("update SysAdmin set LoginName=@LoginName, LoginPwd=@LoginPwd, " +
+                "RoleName=@RoleName where LoginId=@LoginId");
+            SQLiteParameter[] parameters = new SQLiteParameter[]
+            {
+                new SQLiteParameter("@LoginId", sysAdmin.LoginId),
+                new SQLiteParameter("@LoginName", sysAdmin.LoginName),
+                new SQLiteParameter("@LoginPwd", sysAdmin.LoginPwd),
+                new SQLiteParameter("@RoleName", sysAdmin.RoleName.ToString())
+            };
+            return SQLiteHelper.ExecuteNonQuery(stringBuilder.ToString(), parameters) == 1;
+        }
+
+        public bool DeleteSysAdmin(int loginId)
+        {
+            string sql = "delete from SysAdmin where LoginId=@LoginId";
+            SQLiteParameter[] parameters = new SQLiteParameter[]
+            {
+                new SQLiteParameter("@LoginId", loginId)
+            };
+            return SQLiteHelper.ExecuteNonQuery(sql, parameters) == 1;
+        }
     }
 }

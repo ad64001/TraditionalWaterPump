@@ -83,5 +83,45 @@ namespace TraditionalWaterPump.Services
                 return OperateResult.CreateFailResult<List<HistoryData>>(ex.Message);
             }
         }
+
+        /// <summary>
+        /// 单个区间查询数据，返回DataTable格式，方便报表展示
+        /// </summary>
+        /// <param name="start"></param>
+        /// <param name="end"></param>
+        /// <param name="condition"></param>
+        /// <param name="datatableName"></param>
+        /// <returns></returns>
+        public OperateResult<DataTable> GetReportDataByCondition(string start,string end,List<string> condition,string datatableName)
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append("select ");
+            stringBuilder.Append(string.Join(",", condition));
+            stringBuilder.Append(" from HistoryData where InsertTime between @Start and @End order by InsertTime desc");
+
+            SQLiteParameter[] parameters = new SQLiteParameter[]
+            {
+                new SQLiteParameter("@Start", start),
+                new SQLiteParameter("@End", end)
+            };
+
+            try
+            {
+                DataSet dataSet = SQLiteHelper.GetDataSet(stringBuilder.ToString(), parameters,datatableName);
+                if (dataSet.Tables.Count > 0)
+                {
+                    return OperateResult.CreateSuccessResult(dataSet.Tables[0]);
+                }
+                else
+                {
+                    return OperateResult.CreateFailResult<DataTable>("没有查询到数据");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return OperateResult.CreateFailResult<DataTable>(ex.Message);
+            }
+        }
     }
 }
