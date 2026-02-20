@@ -1519,6 +1519,7 @@
             this.lbl_User.TabIndex = 7;
             this.lbl_User.Text = "###";
             this.lbl_User.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_User.Click += new System.EventHandler(this.lbl_User_Click);
             // 
             // label2
             // 

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TraditionalWaterPump.ViewModels;
+using xbd.PressurizationStationPro;
 
 namespace TraditionalWaterPump
 {
@@ -59,7 +60,7 @@ namespace TraditionalWaterPump
             SysAdmin sysAdmin = new SysAdmin()
             {
                 LoginName = this.cmb_User.Text.Trim(),
-                LoginPwd = this.tb_Pwd.Text.Trim()
+                LoginPwd = StringSecurityHelper.DESEncrypt(this.tb_Pwd.Text.Trim())
             };
 
             sysAdmin = sysAdminService.AdminLogin(sysAdmin);

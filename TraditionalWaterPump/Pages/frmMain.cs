@@ -101,7 +101,8 @@ namespace TraditionalWaterPump
                     if (timeSpan.TotalSeconds>sysInfo.LogoffTime)
                     {
                         Program.CurrentUser = null;
-                        this.btn_UserLogin.Text = "用户登录";
+                        this.btn_UserLogin.Text = "登录";
+                        this.lbl_User.Text = "###";
                     }
                 }
             }
@@ -109,8 +110,16 @@ namespace TraditionalWaterPump
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            _cameraHelper?.StopCamera();
-            cts?.Cancel();
+            if (new FrmMsgNoAck("是否确定退出系统", "退出系统").ShowDialog() == DialogResult.OK)
+            {
+                updataTimer?.Stop();
+                _cameraHelper?.StopCamera();
+                cts?.Cancel();
+            }
+            else
+            {
+                e.Cancel = true;
+            }
         }
         private void frmMain_Load(object sender, EventArgs e)
         {
@@ -367,6 +376,16 @@ namespace TraditionalWaterPump
         private void btn_Report_Click(object sender, EventArgs e)
         {
             new FrmReport().ShowDialog();
+        }
+
+        private void lbl_User_Click(object sender, EventArgs e)
+        {
+            if (new FrmMsgNoAck("是否注销用户","注销用户").ShowDialog() == DialogResult.OK)
+            {
+                Program.CurrentUser = null;
+                this.btn_UserLogin.Text = "登录";
+                this.lbl_User.Text = "###";
+            }
         }
     }
 

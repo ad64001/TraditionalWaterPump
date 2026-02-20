@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TraditionalWaterPump.ViewModels;
+using xbd.PressurizationStationPro;
 
 namespace TraditionalWaterPump
 {
@@ -49,7 +50,7 @@ namespace TraditionalWaterPump
         private void UpdateUserInfo(SysAdmin sysAdmin)
         {
             this.tb_UserName.Text = sysAdmin.LoginName;
-            this.tb_UserPwd.Text = sysAdmin.LoginPwd;
+            this.tb_UserPwd.Text = StringSecurityHelper.DESDecrypt(sysAdmin.LoginPwd);
             this.cmb_Role.Text = sysAdmin.RoleName.ToString();
         }
 
@@ -107,7 +108,7 @@ namespace TraditionalWaterPump
             SysAdmin sysAdmin = new SysAdmin()
             {
                 LoginName = this.tb_UserName.Text.Trim(),
-                LoginPwd = this.tb_UserPwd.Text.Trim(),
+                LoginPwd = StringSecurityHelper.DESEncrypt(this.tb_UserPwd.Text.Trim()),
                 RoleName = (RoleName)Enum.Parse(typeof(RoleName), this.cmb_Role.Text.Trim())
             };
 
@@ -172,6 +173,17 @@ namespace TraditionalWaterPump
                 {
                     new FrmMsgNoAck("删除用户失败", "修改用户").ShowDialog();
                     return;
+                }
+            }
+        }
+
+        private void dgv_User_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                if (e.ColumnIndex == 2 && e.Value!=null)
+                {
+                    e.Value = StringSecurityHelper.DESDecrypt(e.Value.ToString());
                 }
             }
         }

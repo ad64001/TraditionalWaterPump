@@ -78,7 +78,7 @@
             // cmb_User
             // 
             this.cmb_User.FormattingEnabled = true;
-            this.cmb_User.Location = new System.Drawing.Point(128, 145);
+            this.cmb_User.Location = new System.Drawing.Point(128, 135);
             this.cmb_User.Name = "cmb_User";
             this.cmb_User.Size = new System.Drawing.Size(171, 23);
             this.cmb_User.TabIndex = 2;
